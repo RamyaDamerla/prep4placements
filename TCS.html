@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TCS - Prep4Placements</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f8ff;
+            color: #172033;
+            padding-bottom: 100px;
+        }
+
+
+        /* HEADER */
+
+        .header {
+            background: linear-gradient(135deg, #071a52, #1677ff);
+            color: white;
+            padding: 18px 20px 25px;
+        }
+
+        .top-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .back {
+            font-size: 26px;
+            cursor: pointer;
+        }
+
+        .heart {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 23px;
+        }
+
+
+        /* COMPANY */
+
+        .company-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .company-logo {
+            width: 70px;
+            height: 70px;
+            background: white;
+            color: #e53935;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+
+        .company-text h1 {
+            margin: 0;
+            font-size: 27px;
+        }
+
+        .company-text p {
+            margin: 6px 0 0;
+            color: #dbe8ff;
+            font-size: 14px;
+        }
+
+
+        /* MAIN */
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+            padding: 20px;
+        }
+
+
+        /* INTRO CARD */
+
+        .intro {
+            background: white;
+            border-radius: 18px;
+            padding: 20px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+            margin-bottom: 20px;
+        }
+
+        .intro h2 {
+            margin: 0 0 8px;
+            color: #071a52;
+            font-size: 20px;
+        }
+
+        .intro p {
+            margin: 0;
+            line-height: 1.6;
+            color: #5c6678;
+        }
+
+
+        /* PREPARATION CARD */
+
+        .prepare-card {
+            background: linear-gradient(135deg, #eef5ff, #ffffff);
+            border: 1px solid #dce9ff;
+            border-radius: 18px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .prepare-card h3 {
+            margin: 0 0 8px;
+            color: #071a52;
+        }
+
+        .prepare-card p {
+            margin: 0;
+            color: #667085;
+            line-height: 1.5;
+        }
+
+
+        /* ROUNDS */
+
+        .rounds-card {
+            background: white;
+            border-radius: 18px;
+            padding: 20px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+        }
+
+        .rounds-card h3 {
+            margin: 0 0 15px;
+            color: #071a52;
+        }
+
+        .round {
+            display: flex;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #edf0f5;
+        }
+
+        .round:last-child {
+            border-bottom: none;
+        }
+
+        .number {
+            width: 38px;
+            height: 38px;
+            flex-shrink: 0;
+            background: #1677ff;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 14px;
+        }
+
+        .round-title {
+            font-weight: bold;
+            color: #172033;
+            font-size: 15px;
+        }
+
+        .round-subtitle {
+            font-size: 13px;
+            color: #7b8494;
+            margin-top: 4px;
+        }
+
+
+        /* UNLOCK */
+
+        .unlock {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 14px 20px;
+            box-shadow: 0 -4px 15px rgba(0,0,0,0.10);
+            z-index: 10;
+        }
+
+        .unlock button {
+            width: 100%;
+            max-width: 700px;
+            display: block;
+            margin: auto;
+            padding: 16px;
+            border: none;
+            border-radius: 13px;
+            background: linear-gradient(135deg, #071a52, #1677ff);
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .unlock button:hover {
+            opacity: 0.92;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 500px) {
+
+            .header {
+                padding: 16px 16px 22px;
+            }
+
+            .container {
+                padding: 16px;
+            }
+
+            .company-text h1 {
+                font-size: 24px;
+            }
+
+            .company-logo {
+                width: 62px;
+                height: 62px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <div class="header">
+
+        <div class="top-row">
+
+            <div class="back" onclick="goBack()">
+                ←
+            </div>
+
+            <div class="heart">
+                ♡
+            </div>
+
+        </div>
+
+
+        <div class="company-area">
+
+            <div class="company-logo">
+                TCS
+            </div>
+
+            <div class="company-text">
+
+                <h1>TCS</h1>
+
+                <p>
+                    Tata Consultancy Services
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- MAIN CONTENT -->
+
+    <div class="container">
+
+
+        <!-- INTRO -->
+
+        <div class="intro">
+
+            <h2>
+                🎯 Prepare for TCS
+            </h2>
+
+            <p>
+                Practice aptitude, technical skills,
+                coding and interview questions to prepare
+                for the TCS placement process.
+            </p>
+
+        </div>
+
+
+
+        <!-- PREPARATION -->
+
+        <div class="prepare-card">
+
+            <h3>
+                🚀 Complete Preparation
+            </h3>
+
+            <p>
+                Get access to practice questions,
+                explanations, coding practice and
+                interview preparation.
+            </p>
+
+        </div>
+
+
+
+        <!-- ROUNDS -->
+
+        <div class="rounds-card">
+
+            <h3>
+                📋 Recruitment Rounds
+            </h3>
+
+
+            <div class="round">
+
+                <div class="number">
+                    1
+                </div>
+
+                <div>
+
+                    <div class="round-title">
+                        Aptitude Test
+                    </div>
+
+                    <div class="round-subtitle">
+                        Quantitative aptitude and reasoning
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="round">
+
+                <div class="number">
+                    2
+                </div>
+
+                <div>
+
+                    <div class="round-title">
+                        Technical Test
+                    </div>
+
+                    <div class="round-subtitle">
+                        Coding and technical fundamentals
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="round">
+
+                <div class="number">
+                    3
+                </div>
+
+                <div>
+
+                    <div class="round-title">
+                        Technical Interview
+                    </div>
+
+                    <div class="round-subtitle">
+                        Technical concepts and projects
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="round">
+
+                <div class="number">
+                    4
+                </div>
+
+                <div>
+
+                    <div class="round-title">
+                        HR Interview
+                    </div>
+
+                    <div class="round-subtitle">
+                        Communication and HR questions
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- UNLOCK -->
+
+    <div class="unlock">
+
+        <button onclick="unlockTCS()">
+            🔒 Unlock TCS Preparation - ₹10
+        </button>
+
+    </div>
+
+
+
+    <script>
+
+        function goBack() {
+
+            window.location.href = "home.html";
+
+        }
+
+
+        function unlockTCS() {
+
+            window.location.href = "payment.html";
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

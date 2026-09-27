@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Progress</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #222;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #0b1f4d, #1769e0);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header h2 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .container {
+            padding: 20px;
+            padding-bottom: 90px;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            margin-bottom: 18px;
+            border-radius: 18px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: #0b1f4d;
+        }
+
+        .progress-container {
+            width: 100%;
+            height: 18px;
+            background: #e4e8ef;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-top: 15px;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #1769e0, #4c9aff);
+            border-radius: 20px;
+            transition: width 0.5s ease;
+        }
+
+        .percentage {
+            text-align: center;
+            font-size: 26px;
+            font-weight: bold;
+            margin-top: 12px;
+            color: #1769e0;
+        }
+
+        .stat {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 13px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .stat:last-child {
+            border-bottom: none;
+        }
+
+        .stat b {
+            color: #1769e0;
+        }
+
+        .section-progress {
+            margin-top: 8px;
+        }
+
+        .section-title {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px;
+        }
+
+        .section-title span:last-child {
+            font-weight: bold;
+            color: #1769e0;
+        }
+
+        .small-progress {
+            width: 100%;
+            height: 10px;
+            background: #e4e8ef;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .small-progress-bar {
+            height: 100%;
+            width: 0%;
+            background: #1769e0;
+            border-radius: 20px;
+            transition: width 0.5s ease;
+        }
+
+        .back-button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 12px;
+            background: #0b1f4d;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background: #1769e0;
+        }
+
+        .empty {
+            color: #888;
+            font-size: 14px;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="header">
+
+        <h2>📊 My Progress</h2>
+
+    </div>
+
+
+    <div class="container">
+
+
+        <!-- OVERALL PROGRESS -->
+
+        <div class="card">
+
+            <h3>📈 Overall Progress</h3>
+
+            <div class="progress-container">
+
+                <div
+                    class="progress-bar"
+                    id="progressBar">
+                </div>
+
+            </div>
+
+            <div
+                class="percentage"
+                id="progressPercentage">
+                0%
+            </div>
+
+        </div>
+
+
+        <!-- QUESTION STATISTICS -->
+
+        <div class="card">
+
+            <h3>📝 Question Statistics</h3>
+
+            <div class="stat">
+                <span>Questions Attempted</span>
+                <b id="attempted">0</b>
+            </div>
+
+            <div class="stat">
+                <span>Total Questions</span>
+                <b id="totalQuestions">0</b>
+            </div>
+
+            <div class="stat">
+                <span>Correct Answers</span>
+                <b id="correct">0</b>
+            </div>
+
+            <div class="stat">
+                <span>Incorrect Answers</span>
+                <b id="incorrect">0</b>
+            </div>
+
+            <div class="stat">
+                <span>Accuracy</span>
+                <b id="accuracy">0%</b>
+            </div>
+
+        </div>
+
+
+        <!-- PREPARATION AREAS -->
+
+        <div class="card">
+
+            <h3>📚 Preparation Areas</h3>
+
+
+            <!-- APTITUDE -->
+
+            <div class="section-progress">
+
+                <div class="section-title">
+
+                    <span>Aptitude</span>
+
+                    <span id="aptitudeProgress">
+                        0%
+                    </span>
+
+                </div>
+
+                <div class="small-progress">
+
+                    <div
+                        class="small-progress-bar"
+                        id="aptitudeBar">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CODING -->
+
+            <div class="section-progress">
+
+                <div class="section-title">
+
+                    <span>Coding</span>
+
+                    <span id="codingProgress">
+                        0%
+                    </span>
+
+                </div>
+
+                <div class="small-progress">
+
+                    <div
+                        class="small-progress-bar"
+                        id="codingBar">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CORE EEE -->
+
+            <div class="section-progress">
+
+                <div class="section-title">
+
+                    <span>Core EEE</span>
+
+                    <span id="coreProgress">
+                        0%
+                    </span>
+
+                </div>
+
+                <div class="small-progress">
+
+                    <div
+                        class="small-progress-bar"
+                        id="coreBar">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- TECHNICAL INTERVIEW -->
+
+            <div class="section-progress">
+
+                <div class="section-title">
+
+                    <span>Technical Interview</span>
+
+                    <span id="technicalProgress">
+                        0%
+                    </span>
+
+                </div>
+
+                <div class="small-progress">
+
+                    <div
+                        class="small-progress-bar"
+                        id="technicalBar">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- HR INTERVIEW -->
+
+            <div class="section-progress">
+
+                <div class="section-title">
+
+                    <span>HR Interview</span>
+
+                    <span id="hrProgress">
+                        0%
+                    </span>
+
+                </div>
+
+                <div class="small-progress">
+
+                    <div
+                        class="small-progress-bar"
+                        id="hrBar">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="back-button"
+            onclick="goBack()">
+
+            ← Back to TCS Preparation
+
+        </button>
+
+
+    </div>
+
+
+    <!-- QUESTION DATA -->
+
+    <script src="question-data.js"></script>
+
+
+    <!-- COMMON PROGRESS -->
+
+    <script src="progress.js"></script>
+
+
+    <script>
+
+
+        /*
+         * Get saved progress
+         */
+
+        const progressData =
+            JSON.parse(
+                localStorage.getItem("progressData")
+            ) || {
+
+                attempted: 0,
+
+                correct: 0,
+
+                incorrect: 0,
+
+                sections: {
+
+                    aptitude: {
+                        attempted: 0,
+                        correct: 0
+                    },
+
+                    coding: {
+                        attempted: 0,
+                        correct: 0
+                    },
+
+                    coreEEE: {
+                        attempted: 0,
+                        correct: 0
+                    },
+
+                    technicalInterview: {
+                        attempted: 0,
+                        correct: 0
+                    },
+
+                    hrInterview: {
+                        attempted: 0,
+                        correct: 0
+                    }
+
+                }
+
+            };
+
+
+        /*
+         * Get automatic question counts
+         */
+
+        const counts =
+            getQuestionCounts();
+
+
+        /*
+         * Overall statistics
+         */
+
+        const attempted =
+            progressData.attempted || 0;
+
+        const correct =
+            progressData.correct || 0;
+
+        const incorrect =
+            progressData.incorrect || 0;
+
+
+        /*
+         * Accuracy
+         */
+
+        let accuracy = 0;
+
+        if (attempted > 0) {
+
+            accuracy =
+                Math.round(
+                    (correct / attempted) * 100
+                );
+
+        }
+
+
+        /*
+         * Overall progress
+         */
+
+        let overallProgress = 0;
+
+        if (counts.total > 0) {
+
+            overallProgress =
+                Math.round(
+                    (attempted / counts.total) * 100
+                );
+
+        }
+
+        if (overallProgress > 100) {
+
+            overallProgress = 100;
+
+        }
+
+
+        /*
+         * Display overall statistics
+         */
+
+        document.getElementById(
+            "attempted"
+        ).innerText =
+            attempted;
+
+
+        document.getElementById(
+            "totalQuestions"
+        ).innerText =
+            counts.total;
+
+
+        document.getElementById(
+            "correct"
+        ).innerText =
+            correct;
+
+
+        document.getElementById(
+            "incorrect"
+        ).innerText =
+            incorrect;
+
+
+        document.getElementById(
+            "accuracy"
+        ).innerText =
+            accuracy + "%";
+
+
+        document.getElementById(
+            "progressBar"
+        ).style.width =
+            overallProgress + "%";
+
+
+        document.getElementById(
+            "progressPercentage"
+        ).innerText =
+            overallProgress + "%";
+
+
+        /*
+         * Section progress
+         */
+
+        function getSectionProgress(
+            section,
+            total
+        ) {
+
+            if (!total) {
+
+                return 0;
+
+            }
+
+
+            if (!progressData.sections[section]) {
+
+                return 0;
+
+            }
+
+
+            const attempted =
+                progressData.sections[section].attempted || 0;
+
+
+            let percentage =
+                Math.round(
+                    (attempted / total) * 100
+                );
+
+
+            if (percentage > 100) {
+
+                percentage = 100;
+
+            }
+
+
+            return percentage;
+
+        }
+
+
+        /*
+         * Automatic section totals
+         */
+
+        const aptitudeProgress =
+            getSectionProgress(
+                "aptitude",
+                counts.aptitude
+            );
+
+
+        const codingProgress =
+            getSectionProgress(
+                "coding",
+                counts.coding
+            );
+
+
+        const coreProgress =
+            getSectionProgress(
+                "coreEEE",
+                counts.coreEEE
+            );
+
+
+        const technicalProgress =
+            getSectionProgress(
+                "technicalInterview",
+                counts.technicalInterview
+            );
+
+
+        const hrProgress =
+            getSectionProgress(
+                "hrInterview",
+                counts.hrInterview
+            );
+
+
+        /*
+         * Display section percentages
+         */
+
+        document.getElementById(
+            "aptitudeProgress"
+        ).innerText =
+            aptitudeProgress + "%";
+
+
+        document.getElementById(
+            "codingProgress"
+        ).innerText =
+            codingProgress + "%";
+
+
+        document.getElementById(
+            "coreProgress"
+        ).innerText =
+            counts.coreEEE > 0
+                ? coreProgress + "%"
+                : "No questions";
+
+
+        document.getElementById(
+            "technicalProgress"
+        ).innerText =
+            counts.technicalInterview > 0
+                ? technicalProgress + "%"
+                : "No questions";
+
+
+        document.getElementById(
+            "hrProgress"
+        ).innerText =
+            counts.hrInterview > 0
+                ? hrProgress + "%"
+                : "No questions";
+
+
+        /*
+         * Progress bars
+         */
+
+        document.getElementById(
+            "aptitudeBar"
+        ).style.width =
+            aptitudeProgress + "%";
+
+
+        document.getElementById(
+            "codingBar"
+        ).style.width =
+            codingProgress + "%";
+
+
+        document.getElementById(
+            "coreBar"
+        ).style.width =
+            coreProgress + "%";
+
+
+        document.getElementById(
+            "technicalBar"
+        ).style.width =
+            technicalProgress + "%";
+
+
+        document.getElementById(
+            "hrBar"
+        ).style.width =
+            hrProgress + "%";
+
+
+        /*
+         * Back button
+         */
+
+        function goBack() {
+
+            window.location.href =
+                "TCS_contents.html";
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

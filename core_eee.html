@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Core EEE</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #222;
+        }
+
+        .header {
+            background: #0b1f4d;
+            color: white;
+            padding: 18px;
+            text-align: center;
+        }
+
+        .header h2 {
+            margin: 0;
+        }
+
+        .container {
+            padding: 20px;
+            padding-bottom: 80px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .category {
+            background: white;
+            padding: 18px;
+            margin-bottom: 15px;
+            border-radius: 15px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        .category h3 {
+            margin: 0 0 8px 0;
+            color: #0b1f4d;
+        }
+
+        .category p {
+            margin: 0 0 15px 0;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .practice-button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 9px;
+            background: #0b1f4d;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .back-button {
+            width: 100%;
+            padding: 13px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 10px;
+            background: #0b1f4d;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h2>⚡ Core EEE</h2>
+    </div>
+
+    <div class="container">
+
+        <div class="subtitle">
+            Practice core Electrical & Electronics concepts
+        </div>
+
+
+        <!-- Electrical Fundamentals -->
+
+        <div class="category">
+
+            <h3>🔌 Electrical Fundamentals</h3>
+
+            <p>
+                Voltage, current, resistance, power, circuits and basic electrical concepts.
+            </p>
+
+            <button
+                class="practice-button"
+                onclick="openCategory('Electrical Fundamentals')">
+                Practice
+            </button>
+
+        </div>
+
+
+        <!-- Electrical Machines -->
+
+        <div class="category">
+
+            <h3>⚙️ Electrical Machines</h3>
+
+            <p>
+                Transformers, DC machines, induction motors and synchronous machines.
+            </p>
+
+            <button
+                class="practice-button"
+                onclick="openCategory('Electrical Machines')">
+                Practice
+            </button>
+
+        </div>
+
+
+        <!-- Power Electronics -->
+
+        <div class="category">
+
+            <h3>🔋 Power Electronics</h3>
+
+            <p>
+                Diodes, SCR, MOSFET, IGBT, converters, inverters and PWM.
+            </p>
+
+            <button
+                class="practice-button"
+                onclick="openCategory('Power Electronics')">
+                Practice
+            </button>
+
+        </div>
+
+
+        <!-- Power Systems -->
+
+        <div class="category">
+
+            <h3>⚡ Power Systems</h3>
+
+            <p>
+                Generation, transmission, distribution, protection and power system basics.
+            </p>
+
+            <button
+                class="practice-button"
+                onclick="openCategory('Power Systems')">
+                Practice
+            </button>
+
+        </div>
+
+
+        <!-- Control Systems -->
+
+        <div class="category">
+
+            <h3>🎛️ Control Systems</h3>
+
+            <p>
+                Transfer functions, block diagrams, stability, PID and control concepts.
+            </p>
+
+            <button
+                class="practice-button"
+                onclick="openCategory('Control Systems')">
+                Practice
+            </button>
+
+        </div>
+
+
+        <!-- Electronics -->
+
+        <div class="category">
+
+            <h3>📡 Electronics</h3>
+
+            <p>
+                Semiconductor devices, diodes, transistors, amplifiers and digital electronics.
+            </p>
+
+            <button
+                class="practice-button"
+                onclick="openCategory('Electronics')">
+                Practice
+            </button>
+
+        </div>
+
+
+        <!-- Electric Vehicles -->
+
+        <div class="category">
+
+            <h3>🚗 Electric Vehicles</h3>
+
+            <p>
+                EV batteries, BMS, motors, power converters and EV powertrain concepts.
+            </p>
+
+            <button
+                class="practice-button"
+                onclick="openCategory('Electric Vehicles')">
+                Practice
+            </button>
+
+        </div>
+
+
+        <button
+            class="back-button"
+            onclick="goBack()">
+            ← Back to TCS Preparation
+        </button>
+
+    </div>
+
+
+    <script>
+
+        function openCategory(category) {
+
+            alert(
+                category +
+                " questions will be added here."
+            );
+
+        }
+
+
+        function goBack() {
+
+            window.location.href =
+                "TCS_contents.html";
+
+        }
+
+    </script>
+
+</body>
+</html>

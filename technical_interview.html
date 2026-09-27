@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Technical Interview</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #222;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #0b1f4d, #1769e0);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .header h2 {
+            margin: 0;
+            font-size: 22px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            padding-bottom: 100px;
+        }
+
+        /* Subject heading */
+
+        .subject-heading {
+            background: linear-gradient(135deg, #0b1f4d, #1769e0);
+            color: white;
+            padding: 18px;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+        }
+
+        .subject-heading h3 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .subject-heading p {
+            margin: 7px 0 0;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* Question number */
+
+        .question-number {
+            color: #666;
+            font-size: 15px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        /* Question card */
+
+        .question-box {
+            background: white;
+            padding: 22px;
+            border-radius: 16px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        .question-label {
+            color: #1769e0;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .question {
+            font-size: 19px;
+            font-weight: bold;
+            line-height: 1.5;
+            margin-bottom: 22px;
+        }
+
+        /* Answer section */
+
+        .answer-section {
+            background: #f7f9fd;
+            border-left: 4px solid #1769e0;
+            padding: 16px;
+            border-radius: 10px;
+            line-height: 1.7;
+        }
+
+        .answer-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #0b1f4d;
+            margin-bottom: 10px;
+        }
+
+        .answer-section p {
+            margin: 6px 0;
+        }
+
+        .answer-section ul {
+            margin-top: 8px;
+            padding-left: 22px;
+        }
+
+        .answer-section li {
+            margin-bottom: 7px;
+        }
+
+        /* AI button */
+
+        .ai-button {
+            width: 100%;
+            margin-top: 18px;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background: #6c3cff;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .ai-button:hover {
+            opacity: 0.9;
+        }
+
+        /* Navigation */
+
+        .navigation {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .navigation button {
+            flex: 1;
+            padding: 13px;
+            border: none;
+            border-radius: 10px;
+            background: #ddd;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .navigation button:hover {
+            background: #ccc;
+        }
+
+        /* Back button */
+
+        .back-button {
+            width: 100%;
+            margin-top: 15px;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background: #0b1f4d;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        /* Progress indicator */
+
+        .progress-info {
+            background: white;
+            padding: 14px 16px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+            color: #555;
+            font-size: 14px;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 600px) {
+
+            .container {
+                padding: 15px;
+                padding-bottom: 90px;
+            }
+
+            .header h2 {
+                font-size: 19px;
+            }
+
+            .question {
+                font-size: 17px;
+            }
+
+            .question-box {
+                padding: 17px;
+            }
+
+            .subject-heading h3 {
+                font-size: 18px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h2>🎤 Technical Interview</h2>
+    </div>
+
+
+    <div class="container">
+
+        <div class="progress-info" id="progressInfo"></div>
+
+        <div id="subjectHeading"></div>
+
+        <div class="question-number" id="questionNumber"></div>
+
+        <div class="question-box">
+
+            <div class="question-label">
+                INTERVIEW QUESTION
+            </div>
+
+            <div
+                class="question"
+                id="questionText">
+            </div>
+
+
+            <div class="answer-section">
+
+                <div class="answer-title" id="answerTitle">
+                    Answer
+                </div>
+
+                <div id="answerText"></div>
+
+            </div>
+
+
+            <button
+                class="ai-button"
+                onclick="openAI()">
+
+                🤖 AI Explanation
+
+            </button>
+
+        </div>
+
+
+        <div class="navigation">
+
+            <button onclick="previousQuestion()">
+                ← Previous
+            </button>
+
+            <button onclick="nextQuestion()">
+                Next →
+            </button>
+
+        </div>
+
+
+        <button
+            class="back-button"
+            onclick="goBack()">
+
+            ← Back to TCS Preparation
+
+        </button>
+
+    </div>
+
+
+    <script src="progress.js"></script>
+
+    <script>
+
+        /*
+        ============================================================
+        TECHNICAL INTERVIEW QUESTION DATA
+        ============================================================
+        */
+
+        const interviewSections = [
+
+            /* =====================================================
+               PROJECT QUESTIONS
+               ===================================================== */
+
+            {
+                title: "🔹 Project Questions",
+                description: "Common project questions and how to answer them effectively.",
+
+                questions: [
+
+                    {
+                        id: "project_001",
+
+                        question: "Tell me about your project.",
+
+                        answerTitle: "How to answer effectively",
+
+                        answer: `
+                            <p>Explain your project in a clear order:</p>
+
+                            <ul>
+                                <li><b>Project idea:</b> What is your project about?</li>
+
+                                <li><b>Why you chose it:</b> Explain what made you select this project.</li>
+
+                                <li><b>Problem statement:</b> What real-world problem are you trying to solve?</li>
+
+                                <li><b>Your approach:</b> Explain how you approached and solved the problem.</li>
+
+                                <li><b>Tools and technologies:</b> Mention the software, hardware, programming languages and other tools used.</li>
+
+                                <li><b>Your contribution:</b> Clearly explain what you personally worked on.</li>
+
+                                <li><b>Result:</b> Explain what your project achieved.</li>
+
+                                <li><b>What you learned:</b> Mention the technical and practical knowledge you gained.</li>
+                            </ul>
+
+                            <p><b>💡 Tip:</b> Explain these points in the same order instead of explaining your project randomly.</p>
+                        `
+                    },
+
+
+                    {
+                        id: "project_002",
+
+                        question: "Why did you choose this project?",
+
+                        answerTitle: "How to answer effectively",
+
+                        answer: `
+                            <p>Explain:</p>
+
+                            <ul>
+                                <li>What interested you about the project.</li>
+
+                                <li>What real-world problem you identified.</li>
+
+                                <li>Why solving that problem is useful.</li>
+
+                                <li>Why you selected your particular approach.</li>
+
+                                <li>How the project is related to your course, skills or interests.</li>
+                            </ul>
+
+                            <p><b>💡 Tip:</b> Give a genuine reason instead of saying only "because it was assigned to us."</p>
+                        `
+                    },
+
+
+                    {
+                        id: "project_003",
+
+                        question: "What was your contribution to the project?",
+
+                        answerTitle: "How to answer effectively",
+
+                        answer: `
+                            <p>Focus mainly on <b>your own work</b>.</p>
+
+                            <ul>
+                                <li>Which part of the project you handled.</li>
+
+                                <li>What tasks you personally completed.</li>
+
+                                <li>Which tools or technologies you used.</li>
+
+                                <li>Any problem you solved.</li>
+
+                                <li>What result you achieved from your work.</li>
+                            </ul>
+
+                            <p><b>💡 Tip:</b> Clearly use "I worked on..." when explaining your contribution.</p>
+                        `
+                    },
+
+
+                    {
+                        id: "project_004",
+
+                        question: "How did you approach your project?",
+
+                        answerTitle: "How to answer effectively",
+
+                        answer: `
+                            <p>Explain the project workflow step by step:</p>
+
+                            <ul>
+                                <li>First, identify the problem.</li>
+
+                                <li>Then explain how you planned the solution.</li>
+
+                                <li>Mention the components, tools or technologies selected.</li>
+
+                                <li>Explain how you implemented the solution.</li>
+
+                                <li>Explain how you tested it.</li>
+
+                                <li>Finally, mention the result.</li>
+                            </ul>
+
+                            <p><b>💡 Tip:</b> Explain the actual process you followed rather than giving only the final result.</p>
+                        `
+                    },
+
+
+                    {
+                        id: "project_005",
+
+                        question: "What tools and technologies did you use in your project?",
+
+                        answerTitle: "How to answer effectively",
+
+                        answer: `
+                            <p>Mention the tools and explain <b>why each one was used</b>.</p>
+
+                            <ul>
+                                <li>Programming languages</li>
+
+                                <li>Software tools</li>
+
+                                <li>Simulation tools</li>
+
+                                <li>Hardware/components</li>
+
+                                <li>Databases or other technologies</li>
+                            </ul>
+
+                            <p><b>💡 Tip:</b> Don't simply list technologies. Explain what you used each technology for.</p>
+                        `
+                    },
+
+
+                    {
+                        id: "project_006",
+
+                        question: "What challenges did you face during the project?",
+
+                        answerTitle: "How to answer effectively",
+
+                        answer: `
+                            <p>Explain the challenge and how you solved it.</p>
+
+                            <ul>
+                                <li>What problem occurred?</li>
+
+                                <li>Why did it happen?</li>
+
+                                <li>How did you identify the cause?</li>
+
+                                <li>What solution did you try?</li>
+
+                                <li>What was the final result?</li>
+                            </ul>
+
+                            <p><b>💡 Tip:</b> Interviewers are interested in your problem-solving approach, not just the problem itself.</p>
+                        `
+                    },
+
+
+                    {
+                        id: "project_007",
+
+                        question: "What did you learn from your project?",
+
+                        answerTitle: "How to answer effectively",
+
+                        answer: `
+                            <p>Talk about both technical and practical learning.</p>
+
+                            <ul>
+                                <li>Technical concepts you learned.</li>
+
+                                <li>Tools or technologies you learned.</li>
+
+                                <li>Problem-solving skills.</li>
+
+                                <li>Teamwork and communication.</li>
+
+                                <li>Testing and debugging experience.</li>
+                            </ul>
+
+                            <p><b>💡 Tip:</b> Connect your learning with something you actually did in the project.</p>
+                        `
+                    },
+
+
+                    {
+                        id: "project_008",
+
+                        question: "How would you improve your project in the future?",
+
+                        answerTitle: "How to answer effectively",
+
+                        answer: `
+                            <p>Mention realistic future improvements.</p>
+
+                            <ul>
+                                <li>Features you would like to add.</li>
+
+                                <li>Performance improvements.</li>
+
+                                <li>Better accuracy or efficiency.</li>
+
+                                <li>Better hardware or software implementation.</li>
+
+                                <li>Ways to make the project useful in a real-world application.</li>
+                            </ul>
+
+                            <p><b>💡 Tip:</b> Choose improvements that are actually possible for your project.</p>
+                        `
+                    }
+
+                ]
+            },
+
+
+            /* =====================================================
+               BASIC PROGRAMMING
+               ===================================================== */
+
+            {
+                title: "🔹 Basic Programming",
+                description: "Important programming fundamentals for technical interviews.",
+
+                questions: [
+
+                    {
+                        id: "programming_001",
+
+                        question: "What is a programming language?",
+
+                        answerTitle: "Answer",
+
+                        answer: `
+                            <p>A programming language is a language used to give instructions to a computer to perform specific tasks.</p>
+
+                            <p>Examples include <b>C, C++, Java and Python.</b></p>
+                        `
+                    },
+
+
+                    {
+                        id: "programming_002",
+
+                        question: "What is a variable?",
+
+                        answerTitle: "Answer",
+
+                        answer: `
+                            <p>A variable is a named memory location used to store a value that can change during program execution.</p>
+
+                            <p>For example, in <b>int age = 20;</b>, <b>age</b> is a variable.</p>
+                        `
+                    },
+
+
+                    {
+                        id: "programming_003",
+
+                        question: "What is a data type?",
+
+                        answerTitle: "Answer",
+
+                        answer: `
+                            <p>A data type tells the computer what type of value a variable can store.</p>
+
+                            <p>Examples include <b>int, float, char and double.</b></p>
+                        `
+                    },
+
+
+                    {
+                        id: "programming_004",
+
+                        question: "What is the difference between a compiler and an interpreter?",
+
+                        answerTitle: "Answer",
+
+                        answer: `
+                            <p>A <b>compiler</b> translates the program into machine or intermediate code before execution.</p>
+
+                            <p>An <b>interpreter</b> translates and executes the program step by step.</p>
+                        `
+                    },
+
+
+                    {
+                        id: "programming_005",
+
+                        question: "What is the difference between C and Python?",
+
+                        answerTitle: "Answer",
+
+                        answer: `
+                            <ul>
+                                <li><b>C:</b> A procedural programming language commonly used for system and hardware-level applications.</li>
+
+                                <li><b>Python:</b> A high-level general-purpose programming language known for simple syntax and wide application areas.</li>
+                            </ul>
+                        `
+                    }
+
+                ]
+            },
+
+
+            /* =====================================================
+               OOP
+               ===================================================== */
+
+            {
+                title: "🔹 OOP",
+                description: "Object-Oriented Programming concepts commonly asked in interviews.",
+
+                questions: [
+
+                    {
+                        id: "oop_001",
+
+                        question: "Explain the four pillars of OOP.",
+
+                        answerTitle: "Answer",
+
+                        answer: `
+                            <ul>
+                                <li><b>Encapsulation:</b> Binding data and methods together and hiding internal details.</li>
+
+                                <li><b>Inheritance:</b> Reusing properties and methods of an existing class.</li>
+
+                                <li><b>Polymorphism:</b> Allowing the same interface or method name to have different implementations.</li>
+
+                                <li><b>Abstraction:</b> Showing essential features while hiding unnecessary implementation details.</li>
+                            </ul>
+                        `
+                    },
+
+
+                    {
+                        id: "oop_002",
+
+                        question: "What is a class?",
+
+                        answerTitle: "Answer",
+
+                        answer: `
+                            <p>A class is a blueprint or template used to create objects.</p>
+
+                            <p>It defines the data and methods that the objects can have.</p>
+                        `
+                    },
+
+
+                    {
+                        id: "oop_003",
+
+                        question: "What is an object?",
+
+                        answerTitle: "Answer",
+
+                        answer: `
+                            <p>An object is an instance of a class.</p>
+
+                            <p>It represents an actual entity created using the structure defined by the class.</p>
+                        `
+                    },
+
+
+                    {
+                        id: "oop_004",
+
+                        question: "What is the difference between overloading and overriding?",
+
+                        answerTitle: "Answer",
+
+                        answer: `
+                            <p><b>Overloading:</b> The same method name is used with different parameters, usually within the same class.</p>
+
+                            <p><b>Overriding:</b> A child class provides its own implementation of a method inherited from a parent class.</p>
+                        `
+                    }
+
+                ]
+            },
+
+
+            /* =====================================================
+               DBMS & SQL
+               ===================================================== */
+
+            {
+                title: "🔹 DBMS & SQL",
+                description: "Important database concepts for technical interviews.",
+
+                questions: [
+
+                    {
+                        id: "dbms_001",
+
+                        question: "What is DBMS?",
+
+                        answerTitle: "Answer",
+
+                        answer: `
+                            <p>DBMS stands for <b>Database Management System</b>.</p>
+
+                            <p>It is software used to store, organize, manage and retrieve data from a database.</p>
+                        `
+                    },
+
+
+                    {
+                        id: "dbms_002",
+
+                        question: "What is a Primary Key?",
+
+                        answerTitle: "Answer",
+
+                        answer: `
+                            <p>A primary key is a column or combination of columns that uniquely identifies each record in a table.</p>
+
+                            <p>A primary key cannot contain <b>NULL</b> values.</p>
+                        `
+                    },
+
+
+                    {
+                        id: "dbms_003",
+
+                        question: "What is Normalization?",
+
+                        answerTitle: "Answer",
+
+                        answer: `
+                            <p>Normalization is the process of organizing data in a database to reduce unnecessary duplication and improve data consistency.</p>
+
+                            <p>Common normal forms include <b>1NF, 2NF and 3NF.</b></p>
+                        `
+                    },
+
+
+                    {
+                        id: "dbms_004",
+
+                        question: "What are joins in SQL?",
+
+                        answerTitle: "Answer",
+
+                        answer: `
+                            <p>Joins are used to combine related data from two or more tables.</p>
+
+                            <ul>
+                                <li><b>INNER JOIN:</b> Returns matching rows.</li>
+
+                                <li><b>LEFT JOIN:</b> Returns all rows from the left table and matching rows from the right table.</li>
+
+                                <li><b>RIGHT JOIN:</b> Returns all rows from the right table and matching rows from the left table.</li>
+
+                                <li><b>FULL JOIN:</b> Returns rows from both tables, including unmatched rows.</li>
+                            </ul>
+                        `
+                    }
+
+                ]
+            },
+
+
+            /* =====================================================
+               COMPUTER NETWORKS
+               ===================================================== */
+
+            {
+                title: "🔹 Computer Networks (CN)",
+                description: "Basic computer networking questions for interviews.",
+
+                questions: [
+
+                    {
+                        id: "cn_001",
+
+                        question: "What is a computer network?",
+
+                        answerTitle: "Answer",
+
+                        answer: `
+                            <p>A computer network is a group of connected devices that communicate and share data and resources with each other.</p>
+                        `
+                    },
+
+
+                    {
+                        id: "cn_002",
+
+                        question: "What is an IP address?",
+
+                        answerTitle: "Answer",
+
+                        answer: `
+                            <p>An IP address is a unique logical address used to identify a device on a network.</p>
+
+                            <p>Examples include IPv4 and IPv6 addresses.</p>
+                        `
+                    },
+
+
+                    {
+                        id: "cn_003",
+
+                        question: "What is the difference between TCP and UDP?",
+
+                        answerTitle: "Answer",
+
+                        answer: `
+                            <p><b>TCP</b> is connection-oriented and provides reliable and ordered data delivery.</p>
+
+                            <p><b>UDP</b> is connectionless and focuses on faster transmission without guaranteeing delivery.</p>
+                        `
+                    },
+
+
+                    {
+                        id: "cn_004",
+
+                        question: "What is HTTP?",
+
+                        answerTitle: "Answer",
+
+                        answer: `
+                            <p>HTTP stands for <b>HyperText Transfer Protocol</b>.</p>
+
+                            <p>It is a protocol used for communication between web clients such as browsers and web servers.</p>
+                        `
+                    }
+
+                ]
+            },
+
+
+            /* =====================================================
+               OPERATING SYSTEM
+               ===================================================== */
+
+            {
+                title: "🔹 Operating Systems (OS)",
+                description: "Basic operating system questions for technical interviews.",
+
+                questions: [
+
+                    {
+                        id: "os_001",
+
+                        question: "What is an operating system?",
+
+                        answerTitle: "Answer",
+
+                        answer: `
+                            <p>An operating system is system software that manages computer hardware and provides services for application programs.</p>
+
+                            <p>Examples include <b>Windows, Linux and macOS.</b></p>
+                        `
+                    },
+
+
+                    {
+                        id: "os_002",
+
+                        question: "What is a process?",
+
+                        answerTitle: "Answer",
+
+                        answer: `
+                            <p>A process is a program that is currently being executed by the operating system.</p>
+                        `
+                    },
+
+
+                    {
+                        id: "os_003",
+
+                        question: "What is a thread?",
+
+                        answerTitle: "Answer",
+
+                        answer: `
+                            <p>A thread is the smallest unit of execution within a process.</p>
+
+                            <p>A process can contain multiple threads that can execute tasks concurrently.</p>
+                        `
+                    },
+
+
+                    {
+                        id: "os_004",
+
+                        question: "What is the difference between a process and a thread?",
+
+                        answerTitle: "Answer",
+
+                        answer: `
+                            <p>A <b>process</b> is an independent program in execution and generally has its own memory space.</p>
+
+                            <p>A <b>thread</b> is a smaller execution unit within a process and shares resources with other threads of that process.</p>
+                        `
+                    }
+
+                ]
+            },
+
+
+            /* =====================================================
+               DSA
+               ===================================================== */
+
+            {
+                title: "🔹 DSA",
+                description: "Basic Data Structures and Algorithms questions.",
+
+                questions: [
+
+                    {
+                        id: "dsa_001",
+
+                        question: "What is an array?",
+
+                        answerTitle: "Answer",
+
+                        answer: `
+                            <p>An array is a data structure used to store multiple elements of the same type in a continuous block of memory.</p>
+                        `
+                    },
+
+
+                    {
+                        id: "dsa_002",
+
+                        question: "What is a string?",
+
+                        answerTitle: "Answer",
+
+                        answer: `
+                            <p>A string is a sequence of characters.</p>
+
+                            <p>For example, <b>"Hello"</b> is a string containing five characters.</p>
+                        `
+                    },
+
+
+                    {
+                        id: "dsa_003",
+
+                        question: "What is searching?",
+
+                        answerTitle: "Answer",
+
+                        answer: `
+                            <p>Searching is the process of finding a particular element in a data structure.</p>
+
+                            <p>Common searching methods include <b>Linear Search</b> and <b>Binary Search</b>.</p>
+                        `
+                    },
+
+
+                    {
+                        id: "dsa_004",
+
+                        question: "What is sorting?",
+
+                        answerTitle: "Answer",
+
+                        answer: `
+                            <p>Sorting is the process of arranging data in a particular order, such as ascending or descending order.</p>
+
+                            <p>Examples include Bubble Sort, Selection Sort and Merge Sort.</p>
+                        `
+                    },
+
+
+                    {
+                        id: "dsa_005",
+
+                        question: "What is time complexity?",
+
+                        answerTitle: "Answer",
+
+                        answer: `
+                            <p>Time complexity describes how the running time of an algorithm changes as the input size increases.</p>
+
+                            <p>It is commonly represented using <b>Big O notation</b>, such as O(n) or O(n²).</p>
+                        `
+                    }
+
+                ]
+            }
+
+        ];
+
+
+        /*
+        ============================================================
+        CREATE ONE FLAT QUESTION LIST
+        ============================================================
+        */
+
+        let allQuestions = [];
+
+        interviewSections.forEach(function(section) {
+
+            section.questions.forEach(function(question, index) {
+
+                allQuestions.push({
+
+                    id: question.id,
+
+                    subject: section.title,
+
+                    description: section.description,
+
+                    number: index + 1,
+
+                    question: question.question,
+
+                    answerTitle: question.answerTitle,
+
+                    answer: question.answer
+
+                });
+
+            });
+
+        });
+
+
+        let currentQuestion = 0;
+
+
+        /*
+        ============================================================
+        DISPLAY QUESTION
+        ============================================================
+        */
+
+        function displayQuestion() {
+
+            const q = allQuestions[currentQuestion];
+
+            /*
+             * SAVE TECHNICAL INTERVIEW PROGRESS
+             *
+             * Viewing the question and its answer counts
+             * as completing that interview question.
+             * saveProgress() prevents duplicate counting.
+             */
+            saveProgress(
+                "technicalInterview",
+                q.id,
+                true
+            );
+
+
+
+            /*
+            Subject heading
+            */
+
+            document.getElementById("subjectHeading").innerHTML =
+
+                `
+                <div class="subject-heading">
+
+                    <h3>${q.subject}</h3>
+
+                    <p>${q.description}</p>
+
+                </div>
+                `;
+
+
+            /*
+            Question number
+            */
+
+            document.getElementById("questionNumber").innerText =
+
+                "Question " +
+                q.number +
+                " of " +
+                getSubjectQuestionCount(q.subject) +
+                " in this subject";
+
+
+            /*
+            Question
+            */
+
+            document.getElementById("questionText").innerText =
+                q.question;
+
+
+            /*
+            Answer title
+            */
+
+            document.getElementById("answerTitle").innerText =
+                q.answerTitle;
+
+
+            /*
+            Answer
+            */
+
+            document.getElementById("answerText").innerHTML =
+                q.answer;
+
+
+            /*
+            Overall progress
+            */
+
+            document.getElementById("progressInfo").innerText =
+
+                "Technical Interview • Question " +
+                (currentQuestion + 1) +
+                " of " +
+                allQuestions.length;
+
+        }
+
+
+        /*
+        ============================================================
+        GET QUESTIONS COUNT FOR CURRENT SUBJECT
+        ============================================================
+        */
+
+        function getSubjectQuestionCount(subject) {
+
+            const section = interviewSections.find(
+                function(item) {
+
+                    return item.title === subject;
+
+                }
+            );
+
+            return section
+                ? section.questions.length
+                : 0;
+
+        }
+
+
+        /*
+        ============================================================
+        AI EXPLANATION
+        ============================================================
+        */
+
+        function openAI() {
+
+            const q = allQuestions[currentQuestion];
+
+
+            const question =
+                encodeURIComponent(q.question);
+
+
+            const answer =
+                encodeURIComponent(
+                    q.answer.replace(/<[^>]*>/g, " ")
+                );
+
+
+            const explanation =
+                encodeURIComponent(
+                    q.answer.replace(/<[^>]*>/g, " ")
+                );
+
+
+            window.location.href =
+
+                "ai-explanation.html" +
+
+                "?question=" +
+                question +
+
+                "&answer=" +
+                answer +
+
+                "&explanation=" +
+                explanation;
+
+        }
+
+
+        /*
+        ============================================================
+        NEXT QUESTION
+        ============================================================
+        */
+
+        function nextQuestion() {
+
+            if (
+                currentQuestion <
+                allQuestions.length - 1
+            ) {
+
+                currentQuestion++;
+
+                displayQuestion();
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+
+            } else {
+
+                alert(
+                    "🎉 You have completed all Technical Interview questions!"
+                );
+
+            }
+
+        }
+
+
+        /*
+        ============================================================
+        PREVIOUS QUESTION
+        ============================================================
+        */
+
+        function previousQuestion() {
+
+            if (currentQuestion > 0) {
+
+                currentQuestion--;
+
+                displayQuestion();
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+
+            }
+
+        }
+
+
+        /*
+        ============================================================
+        BACK
+        ============================================================
+        */
+
+        function goBack() {
+
+            window.location.href =
+                "TCS_contents.html";
+
+        }
+
+
+        /*
+        ============================================================
+        START
+        ============================================================
+        */
+
+        displayQuestion();
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Prep4Placements</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            font-family: Arial, sans-serif;
+
+            min-height: 100vh;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #061a4f,
+                    #0b3d91,
+                    #1476dc
+                );
+
+            color: white;
+
+            overflow-x: hidden;
+
+        }
+
+
+        /* BACKGROUND CIRCLES */
+
+        .circle {
+
+            position: fixed;
+
+            border-radius: 50%;
+
+            background:
+                rgba(80,170,255,0.16);
+
+            pointer-events: none;
+
+        }
+
+
+        .circle-one {
+
+            width: 330px;
+
+            height: 330px;
+
+            top: -170px;
+
+            left: -100px;
+
+        }
+
+
+        .circle-two {
+
+            width: 400px;
+
+            height: 400px;
+
+            right: -180px;
+
+            top: 180px;
+
+        }
+
+
+        .circle-three {
+
+            width: 300px;
+
+            height: 300px;
+
+            left: -170px;
+
+            bottom: -100px;
+
+        }
+
+
+        /* MAIN */
+
+        .page {
+
+            width: 100%;
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            padding:
+                25px 25px 35px;
+
+            text-align: center;
+
+            position: relative;
+
+            z-index: 2;
+
+        }
+
+
+        /* LOGO */
+
+        .cap {
+
+            font-size: 43px;
+
+            margin-bottom: 2px;
+
+        }
+
+
+        .title {
+
+            margin: 0;
+
+            font-size: 43px;
+
+            font-weight: bold;
+
+        }
+
+
+        .title span {
+
+            color: #39baff;
+
+        }
+
+
+        .subtitle {
+
+            margin:
+                8px 0 4px;
+
+            font-size: 21px;
+
+            font-weight: bold;
+
+            color: #eef6ff;
+
+        }
+
+
+        .description {
+
+            margin: 0;
+
+            font-size: 15px;
+
+            color: #d4e6ff;
+
+        }
+
+
+        /* =========================
+           CENTRAL AREA
+        ========================== */
+
+        .central-area {
+
+            position: relative;
+
+            width: 850px;
+
+            max-width: 100%;
+
+            height: 390px;
+
+            margin:
+                15px auto 5px;
+
+        }
+
+
+        /* GIRL BACKGROUND CIRCLE */
+
+        .girl-circle {
+
+            position: absolute;
+
+            width: 350px;
+
+            height: 350px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    #3e9dff,
+                    #1466d4
+                );
+
+            left: 50%;
+
+            top: 15px;
+
+            transform:
+                translateX(-50%);
+
+            box-shadow:
+                0 0 50px
+                rgba(55,160,255,0.35);
+
+        }
+
+
+        /* GIRL */
+
+        .girl {
+
+            position: absolute;
+
+            left: 50%;
+
+            bottom: 0;
+
+            transform:
+                translateX(-50%);
+
+            width: 430px;
+
+            height: 370px;
+
+            object-fit: contain;
+
+            object-position: center bottom;
+
+            z-index: 3;
+
+        }
+
+
+        /* FEATURE CARDS */
+
+        .feature {
+
+            position: absolute;
+
+            width: 175px;
+
+            height: 125px;
+
+            background:
+                rgba(255,255,255,0.96);
+
+            color: #071a52;
+
+            border-radius: 20px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            box-shadow:
+                0 10px 25px
+                rgba(0,0,0,0.18);
+
+            z-index: 5;
+
+            transform:
+                rotate(-4deg);
+
+        }
+
+
+        .feature-icon {
+
+            width: 50px;
+
+            height: 50px;
+
+            border-radius: 15px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 26px;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .feature-name {
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+        }
+
+
+        /* LEFT TOP */
+
+        .aptitude-card {
+
+            left: 30px;
+
+            top: 30px;
+
+            transform:
+                rotate(-6deg);
+
+        }
+
+
+        .aptitude-icon {
+
+            background: #ddf7e9;
+
+        }
+
+
+        /* LEFT BOTTOM */
+
+        .coding-card {
+
+            left: 15px;
+
+            bottom: 35px;
+
+            transform:
+                rotate(5deg);
+
+        }
+
+
+        .coding-icon {
+
+            background: #e2efff;
+
+        }
+
+
+        /* RIGHT TOP */
+
+        .core-card {
+
+            right: 30px;
+
+            top: 30px;
+
+            transform:
+                rotate(6deg);
+
+        }
+
+
+        .core-icon {
+
+            background: #fff0d5;
+
+        }
+
+
+        /* RIGHT BOTTOM */
+
+        .interview-card {
+
+            right: 15px;
+
+            bottom: 35px;
+
+            transform:
+                rotate(-5deg);
+
+        }
+
+
+        .interview-icon {
+
+            background: #ffe4eb;
+
+        }
+
+
+        /* DOTTED CONNECTIONS */
+
+        .connection {
+
+            position: absolute;
+
+            border-top:
+                3px dashed
+                rgba(255,255,255,0.65);
+
+            z-index: 1;
+
+        }
+
+
+        .connection-left-top {
+
+            width: 150px;
+
+            left: 190px;
+
+            top: 105px;
+
+            transform: rotate(20deg);
+
+        }
+
+
+        .connection-left-bottom {
+
+            width: 150px;
+
+            left: 185px;
+
+            top: 270px;
+
+            transform: rotate(-18deg);
+
+        }
+
+
+        .connection-right-top {
+
+            width: 150px;
+
+            right: 190px;
+
+            top: 105px;
+
+            transform: rotate(-20deg);
+
+        }
+
+
+        .connection-right-bottom {
+
+            width: 150px;
+
+            right: 185px;
+
+            top: 270px;
+
+            transform: rotate(18deg);
+
+        }
+
+
+        /* =========================
+           BENEFITS
+        ========================== */
+
+        .benefits {
+
+            max-width: 850px;
+
+            margin:
+                5px auto 22px;
+
+            background:
+                rgba(255,255,255,0.96);
+
+            color: #071a52;
+
+            border-radius: 22px;
+
+            padding:
+                17px 10px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            box-shadow:
+                0 10px 28px
+                rgba(0,0,0,0.16);
+
+        }
+
+
+        .benefit {
+
+            padding:
+                2px 10px;
+
+            border-right:
+                1px solid #d7dfed;
+
+        }
+
+
+        .benefit:last-child {
+
+            border-right: none;
+
+        }
+
+
+        .benefit-icon {
+
+            font-size: 25px;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .benefit-title {
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+        }
+
+
+        .benefit-text {
+
+            font-size: 11px;
+
+            color: #65728a;
+
+            margin-top: 4px;
+
+        }
+
+
+        /* =========================
+           BUTTON
+        ========================== */
+
+        .start-button {
+
+            border: none;
+
+            padding:
+                17px 55px;
+
+            border-radius: 35px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #08a9ff,
+                    #2785ff
+                );
+
+            color: white;
+
+            font-size: 19px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 8px 28px
+                rgba(0,160,255,0.45);
+
+            transition:
+                transform 0.2s;
+
+        }
+
+
+        .start-button:hover {
+
+            transform:
+                translateY(-3px);
+
+        }
+
+
+        .bottom-text {
+
+            margin-top: 15px;
+
+            font-size: 14px;
+
+            color: #dcecff;
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 750px) {
+
+
+            .page {
+
+                padding:
+                    20px 12px 30px;
+
+            }
+
+
+            .title {
+
+                font-size: 32px;
+
+            }
+
+
+            .subtitle {
+
+                font-size: 17px;
+
+            }
+
+
+            .description {
+
+                font-size: 13px;
+
+            }
+
+
+            .central-area {
+
+                height: 470px;
+
+            }
+
+
+            .girl-circle {
+
+                width: 280px;
+
+                height: 280px;
+
+                top: 75px;
+
+            }
+
+
+            .girl {
+
+                width: 340px;
+
+                height: 330px;
+
+                bottom: 50px;
+
+            }
+
+
+            .feature {
+
+                width: 125px;
+
+                height: 95px;
+
+            }
+
+
+            .feature-icon {
+
+                width: 38px;
+
+                height: 38px;
+
+                font-size: 20px;
+
+                margin-bottom: 4px;
+
+            }
+
+
+            .feature-name {
+
+                font-size: 13px;
+
+            }
+
+
+            .aptitude-card {
+
+                left: 5px;
+
+                top: 25px;
+
+            }
+
+
+            .coding-card {
+
+                left: 5px;
+
+                bottom: 25px;
+
+            }
+
+
+            .core-card {
+
+                right: 5px;
+
+                top: 25px;
+
+            }
+
+
+            .interview-card {
+
+                right: 5px;
+
+                bottom: 25px;
+
+            }
+
+
+            .connection {
+
+                display: none;
+
+            }
+
+
+            .benefits {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                gap: 12px;
+
+            }
+
+
+            .benefit {
+
+                border-right: none;
+
+            }
+
+
+            .start-button {
+
+                width: 90%;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- BACKGROUND -->
+
+    <div class="circle circle-one"></div>
+
+    <div class="circle circle-two"></div>
+
+    <div class="circle circle-three"></div>
+
+
+
+    <div class="page">
+
+
+        <!-- TITLE -->
+
+        <div class="cap">
+            🎓
+        </div>
+
+
+        <h1 class="title">
+
+            Prep4<span>Placements</span>
+
+        </h1>
+
+
+        <div class="subtitle">
+
+            Your Placement Journey Starts Here ✨
+
+        </div>
+
+
+        <div class="description">
+
+            Learn • Practice • Improve • Get Placed 🚀
+
+        </div>
+
+
+
+        <!-- CENTRAL AREA -->
+
+        <div class="central-area">
+
+
+            <!-- BLUE CIRCLE -->
+
+            <div class="girl-circle"></div>
+
+
+            <!-- CONNECTIONS -->
+
+            <div
+                class="connection
+                       connection-left-top">
+            </div>
+
+
+            <div
+                class="connection
+                       connection-left-bottom">
+            </div>
+
+
+            <div
+                class="connection
+                       connection-right-top">
+            </div>
+
+
+            <div
+                class="connection
+                       connection-right-bottom">
+            </div>
+
+
+
+            <!-- GIRL -->
+
+            <img
+                src="placement-hero.png"
+                class="girl"
+                alt="Student celebrating placement"
+            >
+
+
+
+            <!-- APTITUDE -->
+
+            <div
+                class="feature
+                       aptitude-card">
+
+
+                <div
+                    class="feature-icon
+                           aptitude-icon">
+
+                    📝
+
+                </div>
+
+
+                <div class="feature-name">
+
+                    Aptitude
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- CODING -->
+
+            <div
+                class="feature
+                       coding-card">
+
+
+                <div
+                    class="feature-icon
+                           coding-icon">
+
+                    💻
+
+                </div>
+
+
+                <div class="feature-name">
+
+                    Coding
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- CORE EEE -->
+
+            <div
+                class="feature
+                       core-card">
+
+
+                <div
+                    class="feature-icon
+                           core-icon">
+
+                    ⚡
+
+                </div>
+
+
+                <div class="feature-name">
+
+                    Core EEE
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- INTERVIEWS -->
+
+            <div
+                class="feature
+                       interview-card">
+
+
+                <div
+                    class="feature-icon
+                           interview-icon">
+
+                    🎤
+
+                </div>
+
+
+                <div class="feature-name">
+
+                    Interviews
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- BENEFITS -->
+
+        <div class="benefits">
+
+
+            <div class="benefit">
+
+                <div class="benefit-icon">
+                    🎯
+                </div>
+
+                <div class="benefit-title">
+
+                    Practice Smart
+
+                </div>
+
+                <div class="benefit-text">
+
+                    Company-wise preparation
+
+                </div>
+
+            </div>
+
+
+
+            <div class="benefit">
+
+                <div class="benefit-icon">
+                    📊
+                </div>
+
+                <div class="benefit-title">
+
+                    Track Progress
+
+                </div>
+
+                <div class="benefit-text">
+
+                    See your improvement
+
+                </div>
+
+            </div>
+
+
+
+            <div class="benefit">
+
+                <div class="benefit-icon">
+                    📚
+                </div>
+
+                <div class="benefit-title">
+
+                    Learn Concepts
+
+                </div>
+
+                <div class="benefit-text">
+
+                    Simple explanations
+
+                </div>
+
+            </div>
+
+
+
+            <div class="benefit">
+
+                <div class="benefit-icon">
+                    💼
+                </div>
+
+                <div class="benefit-title">
+
+                    Crack Interviews
+
+                </div>
+
+                <div class="benefit-text">
+
+                    Prepare with confidence
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- START -->
+
+        <button
+            class="start-button"
+            onclick="startPreparing()">
+
+            🚀 Start Preparing
+            &nbsp; →
+
+        </button>
+
+
+        <div class="bottom-text">
+
+            Your dream job is closer than you think! 💙
+
+        </div>
+
+
+    </div>
+
+
+
+    <script>
+
+        function startPreparing() {
+
+            window.location.href =
+                "home.html";
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

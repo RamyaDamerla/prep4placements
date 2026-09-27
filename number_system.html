@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Number System - Prep4Placements</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f8ff;
+            color: #172033;
+        }
+
+
+        /* HEADER */
+
+        .header {
+            background: linear-gradient(135deg, #071a52, #1677ff);
+            color: white;
+            padding: 18px 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+
+        .back {
+            font-size: 26px;
+            cursor: pointer;
+        }
+
+
+        .header h2 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+
+        /* CONTAINER */
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+            padding: 20px;
+        }
+
+
+        /* PROGRESS */
+
+        .progress-box {
+            background: white;
+            border-radius: 14px;
+            padding: 14px 16px;
+            margin-bottom: 18px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+        }
+
+
+        .progress-top {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: #667085;
+            margin-bottom: 9px;
+        }
+
+
+        .progress-bar {
+            height: 8px;
+            background: #e5eaf2;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+
+        .progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #071a52, #1677ff);
+            border-radius: 20px;
+            transition: width 0.3s;
+        }
+
+
+        /* QUESTION CARD */
+
+        .card {
+            background: white;
+            border-radius: 18px;
+            padding: 22px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+        }
+
+
+        .question-label {
+            color: #1677ff;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+
+        .question {
+            font-size: 19px;
+            font-weight: bold;
+            line-height: 1.6;
+            margin-bottom: 22px;
+        }
+
+
+        /* OPTIONS */
+
+        .option {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            margin: 10px 0;
+            background: #f7f9fc;
+            border: 1px solid #d8deea;
+            border-radius: 11px;
+            text-align: left;
+            cursor: pointer;
+            font-size: 16px;
+            color: #172033;
+        }
+
+
+        .option:hover {
+            background: #eef4ff;
+            border-color: #1677ff;
+        }
+
+
+        .option.selected {
+            background: #dce9ff;
+            border: 2px solid #1677ff;
+        }
+
+
+        /* CHECK BUTTON */
+
+        .check-button {
+            width: 100%;
+            border: none;
+            border-radius: 11px;
+            padding: 14px;
+            margin-top: 15px;
+            background: #071a52;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+
+        .check-button:hover {
+            opacity: 0.92;
+        }
+
+
+        /* RESULT */
+
+        .result {
+            margin-top: 16px;
+            padding: 15px;
+            border-radius: 11px;
+            display: none;
+            line-height: 1.6;
+        }
+
+
+        .correct {
+            background: #e5f7eb;
+            color: #16743a;
+        }
+
+
+        .incorrect {
+            background: #ffe8e8;
+            color: #b42318;
+        }
+
+
+        /* AI */
+
+        .ai-button {
+            width: 100%;
+            border: none;
+            border-radius: 11px;
+            padding: 14px;
+            margin-top: 15px;
+            background: #4b3ca7;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+
+        /* NAVIGATION */
+
+        .navigation {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+
+        .navigation button {
+            width: 50%;
+            border: none;
+            border-radius: 11px;
+            padding: 13px;
+            background: #eef3fb;
+            color: #172033;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+
+        .navigation button:hover {
+            background: #dfe8f8;
+        }
+
+
+        /* BACK */
+
+        .back-button {
+            width: 100%;
+            border: none;
+            border-radius: 11px;
+            padding: 13px;
+            margin-top: 15px;
+            background: #071a52;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 500px) {
+
+            .container {
+                padding: 16px;
+            }
+
+            .card {
+                padding: 18px;
+            }
+
+            .question {
+                font-size: 18px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <div class="header">
+
+        <div class="back" onclick="goBack()">
+            ←
+        </div>
+
+        <h2>
+            🔢 Number System
+        </h2>
+
+    </div>
+
+
+    <div class="container">
+
+
+        <!-- PROGRESS -->
+
+        <div class="progress-box">
+
+            <div class="progress-top">
+
+                <span id="questionNumber">
+                    Loading...
+                </span>
+
+                <span id="progressPercent">
+                    0%
+                </span>
+
+            </div>
+
+
+            <div class="progress-bar">
+
+                <div
+                    class="progress-fill"
+                    id="progressFill">
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- QUESTION CARD -->
+
+        <div class="card">
+
+            <div class="question-label">
+                QUESTION
+            </div>
+
+
+            <div
+                class="question"
+                id="questionText">
+
+                Loading...
+
+            </div>
+
+
+            <div id="options"></div>
+
+
+            <button
+                class="check-button"
+                onclick="checkAnswer()">
+
+                ✓ Check Answer
+
+            </button>
+
+
+            <div
+                class="result"
+                id="result">
+            </div>
+
+
+            <button
+                class="ai-button"
+                onclick="openAI()">
+
+                🤖 AI Explanation
+
+            </button>
+
+
+            <div class="navigation">
+
+                <button onclick="previousQuestion()">
+                    ← Previous
+                </button>
+
+                <button onclick="nextQuestion()">
+                    Next →
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="back-button"
+            onclick="goBack()">
+
+            ← Back to TCS Preparation
+
+        </button>
+
+    </div>
+
+
+    <!-- QUESTION DATA -->
+
+    <script src="question-data.js"></script>
+
+
+    <!-- COMMON PROGRESS -->
+
+    <script src="progress.js"></script>
+
+
+    <script>
+
+
+        /*
+         * Get Number System questions
+         * from question-data.js
+         */
+
+        const questions =
+            questionData.aptitude.numberSystem;
+
+
+        let currentQuestion = 0;
+
+        let selectedAnswer = "";
+
+        let answeredQuestions = {};
+
+
+        /*
+         * DISPLAY QUESTION
+         */
+
+        function displayQuestion() {
+
+            const q =
+                questions[currentQuestion];
+
+
+            /*
+             * Automatic question count
+             */
+
+            document.getElementById(
+                "questionNumber"
+            ).textContent =
+                "Question " +
+                (currentQuestion + 1) +
+                " of " +
+                questions.length;
+
+
+            /*
+             * Automatic progress
+             */
+
+            const percentage =
+                Math.round(
+                    ((currentQuestion + 1) /
+                    questions.length) * 100
+                );
+
+
+            document.getElementById(
+                "progressPercent"
+            ).textContent =
+                percentage + "%";
+
+
+            document.getElementById(
+                "progressFill"
+            ).style.width =
+                percentage + "%";
+
+
+            /*
+             * Display question
+             */
+
+            document.getElementById(
+                "questionText"
+            ).textContent =
+                q.question;
+
+
+            /*
+             * Display options
+             */
+
+            const optionsDiv =
+                document.getElementById(
+                    "options"
+                );
+
+
+            optionsDiv.innerHTML = "";
+
+            selectedAnswer = "";
+
+
+            q.options.forEach(function(option) {
+
+                const button =
+                    document.createElement(
+                        "button"
+                    );
+
+
+                button.className =
+                    "option";
+
+
+                button.textContent =
+                    option;
+
+
+                button.onclick = function() {
+
+                    selectedAnswer =
+                        option;
+
+
+                    document
+                        .querySelectorAll(
+                            ".option"
+                        )
+                        .forEach(function(btn) {
+
+                            btn.classList.remove(
+                                "selected"
+                            );
+
+                        });
+
+
+                    button.classList.add(
+                        "selected"
+                    );
+
+                };
+
+
+                optionsDiv.appendChild(
+                    button
+                );
+
+            });
+
+
+            /*
+             * Reset result
+             */
+
+            const result =
+                document.getElementById(
+                    "result"
+                );
+
+
+            result.style.display =
+                "none";
+
+
+            result.className =
+                "result";
+
+
+            /*
+             * Show previous answer
+             */
+
+            if (
+                answeredQuestions[
+                    currentQuestion
+                ]
+            ) {
+
+                selectedAnswer =
+                    answeredQuestions[
+                        currentQuestion
+                    ].selected;
+
+
+                document
+                    .querySelectorAll(
+                        ".option"
+                    )
+                    .forEach(function(btn) {
+
+                        if (
+                            btn.textContent ===
+                            selectedAnswer
+                        ) {
+
+                            btn.classList.add(
+                                "selected"
+                            );
+
+                        }
+
+                    });
+
+
+                showPreviousResult();
+
+            }
+
+        }
+
+
+        /*
+         * CHECK ANSWER
+         */
+
+        function checkAnswer() {
+
+            if (selectedAnswer === "") {
+
+                alert(
+                    "Please select an answer first."
+                );
+
+                return;
+
+            }
+
+
+            const q =
+                questions[currentQuestion];
+
+
+            const isCorrect =
+                selectedAnswer === q.answer;
+
+
+            /*
+             * Save current-page answer
+             */
+
+            answeredQuestions[
+                currentQuestion
+            ] = {
+
+                selected:
+                    selectedAnswer,
+
+                correct:
+                    isCorrect
+
+            };
+
+
+            /*
+             * Save using unique question ID
+             */
+
+            saveProgress(
+                "aptitude",
+                q.id,
+                isCorrect
+            );
+
+
+            showResult(
+                isCorrect
+            );
+
+        }
+
+
+        /*
+         * SHOW RESULT
+         */
+
+        function showResult(
+            isCorrect
+        ) {
+
+            const q =
+                questions[currentQuestion];
+
+
+            const result =
+                document.getElementById(
+                    "result"
+                );
+
+
+            result.style.display =
+                "block";
+
+
+            if (isCorrect) {
+
+                result.className =
+                    "result correct";
+
+
+                result.innerHTML =
+                    "✅ <b>Correct!</b><br><br>" +
+                    q.explanation;
+
+            }
+
+            else {
+
+                result.className =
+                    "result incorrect";
+
+
+                result.innerHTML =
+                    "❌ <b>Incorrect.</b><br><br>" +
+                    "Correct Answer: " +
+                    q.answer +
+                    "<br><br>" +
+                    q.explanation;
+
+            }
+
+        }
+
+
+        /*
+         * SHOW PREVIOUS RESULT
+         */
+
+        function showPreviousResult() {
+
+            const saved =
+                answeredQuestions[
+                    currentQuestion
+                ];
+
+
+            if (!saved) {
+
+                return;
+
+            }
+
+
+            const q =
+                questions[currentQuestion];
+
+
+            const result =
+                document.getElementById(
+                    "result"
+                );
+
+
+            result.style.display =
+                "block";
+
+
+            if (saved.correct) {
+
+                result.className =
+                    "result correct";
+
+
+                result.innerHTML =
+                    "✅ <b>Correct!</b><br><br>" +
+                    q.explanation;
+
+            }
+
+            else {
+
+                result.className =
+                    "result incorrect";
+
+
+                result.innerHTML =
+                    "❌ <b>Incorrect.</b><br><br>" +
+                    "Correct Answer: " +
+                    q.answer +
+                    "<br><br>" +
+                    q.explanation;
+
+            }
+
+        }
+
+
+        /*
+         * NEXT QUESTION
+         */
+
+        function nextQuestion() {
+
+            if (
+                currentQuestion <
+                questions.length - 1
+            ) {
+
+                currentQuestion++;
+
+                displayQuestion();
+
+            }
+
+            else {
+
+                alert(
+                    "🎉 You have completed all Number System questions!"
+                );
+
+            }
+
+        }
+
+
+        /*
+         * PREVIOUS QUESTION
+         */
+
+        function previousQuestion() {
+
+            if (currentQuestion > 0) {
+
+                currentQuestion--;
+
+                displayQuestion();
+
+            }
+
+        }
+
+
+        /*
+         * AI EXPLANATION
+         */
+
+        function openAI() {
+
+            const q =
+                questions[currentQuestion];
+
+
+            const question =
+                encodeURIComponent(
+                    q.question
+                );
+
+
+            const answer =
+                encodeURIComponent(
+                    q.answer
+                );
+
+
+            const explanation =
+                encodeURIComponent(
+                    q.explanation
+                );
+
+
+            window.location.href =
+                "ai-explanation.html" +
+                "?question=" +
+                question +
+                "&answer=" +
+                answer +
+                "&explanation=" +
+                explanation;
+
+        }
+
+
+        /*
+         * BACK
+         */
+
+        function goBack() {
+
+            window.location.href =
+                "TCS_contents.html";
+
+        }
+
+
+        /*
+         * START
+         */
+
+        if (questions.length > 0) {
+
+            displayQuestion();
+
+        }
+
+        else {
+
+            document.getElementById(
+                "questionText"
+            ).textContent =
+                "No questions available yet.";
+
+            document.getElementById(
+                "questionNumber"
+            ).textContent =
+                "0 questions";
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Payment - Prep4Placements</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #172033;
+        }
+
+
+        /* TOP BAR */
+
+        .topbar {
+            background: #071b2e;
+            color: white;
+            padding: 18px 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .back {
+            font-size: 25px;
+            cursor: pointer;
+            margin-right: 20px;
+        }
+
+        .topbar h2 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+
+        /* MAIN */
+
+        .container {
+            padding: 25px 20px;
+        }
+
+
+        .payment-card {
+            background: white;
+            padding: 25px;
+            border-radius: 18px;
+            box-shadow: 0 2px 10px #00000015;
+        }
+
+
+        .lock {
+            font-size: 50px;
+            text-align: center;
+        }
+
+
+        .payment-card h1 {
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+
+        .description {
+            text-align: center;
+            color: #666;
+            line-height: 1.5;
+        }
+
+
+        /* PRICE */
+
+        .price {
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        .price span {
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+
+        /* FEATURES */
+
+        .features {
+            margin-top: 20px;
+        }
+
+        .feature {
+            padding: 10px 0;
+        }
+
+
+        /* PAYMENT METHODS */
+
+        .methods {
+            margin-top: 25px;
+        }
+
+        .method {
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .method:hover {
+            border-color: #1677ff;
+        }
+
+
+        /* PAY BUTTON */
+
+        .pay-button {
+            width: 100%;
+            padding: 16px;
+            margin-top: 25px;
+            border: none;
+            border-radius: 10px;
+            background: #1677ff;
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .pay-button:hover {
+            background: #005edb;
+        }
+
+
+        .secure {
+            text-align: center;
+            color: #777;
+            font-size: 12px;
+            margin-top: 15px;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- TOP BAR -->
+
+    <div class="topbar">
+
+        <div
+            class="back"
+            onclick="goBack()">
+
+            ←
+
+        </div>
+
+        <h2>
+            Payment
+        </h2>
+
+    </div>
+
+
+
+    <!-- MAIN CONTENT -->
+
+    <div class="container">
+
+
+        <div class="payment-card">
+
+
+            <div class="lock">
+                🔒
+            </div>
+
+
+            <h1>
+                Unlock TCS Preparation
+            </h1>
+
+
+            <p class="description">
+
+                Get complete TCS placement preparation
+                including aptitude, technical and
+                interview questions.
+
+            </p>
+
+
+
+            <!-- PRICE -->
+
+            <div class="price">
+
+                <span>₹10</span>
+
+                <p>
+                    One-time payment
+                </p>
+
+            </div>
+
+
+
+            <!-- FEATURES -->
+
+            <div class="features">
+
+                <div class="feature">
+                    ✅ All recruitment rounds
+                </div>
+
+                <div class="feature">
+                    ✅ 200+ practice questions
+                </div>
+
+                <div class="feature">
+                    ✅ Step-by-step solutions
+                </div>
+
+                <div class="feature">
+                    ✅ AI explanations
+                </div>
+
+                <div class="feature">
+                    ✅ Track your progress
+                </div>
+
+            </div>
+
+
+
+            <!-- PAYMENT METHODS -->
+
+            <div class="methods">
+
+                <h3>
+                    Choose Payment Method
+                </h3>
+
+
+                <div class="method">
+
+                    📱 UPI
+
+                </div>
+
+
+                <div class="method">
+
+                    💳 Debit / Credit Card
+
+                </div>
+
+
+                <div class="method">
+
+                    🏦 Net Banking
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- PAY -->
+
+            <button
+                class="pay-button"
+                onclick="makePayment()">
+
+                Pay ₹10
+
+            </button>
+
+
+            <p class="secure">
+
+                🔒 Secure payment
+
+            </p>
+
+
+        </div>
+
+    </div>
+
+
+
+    <script>
+
+
+        function goBack() {
+
+            window.location.href = "tcs.html";
+
+        }
+
+
+        function makePayment() {
+
+            alert(
+                "Demo payment successful!\
+n\nTCS preparation is now unlocked."
+            );
+
+            window.location.href = "tcs_contents.html";
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

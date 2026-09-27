@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>TCS Preparation - Prep4Placements</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            font-family: Arial, sans-serif;
+
+            background: #f4f7fc;
+
+            color: #172033;
+
+            padding-bottom: 80px;
+
+        }
+
+
+        /* =========================
+           HEADER
+        ========================== */
+
+        .header {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #071a52,
+                    #1554b8
+                );
+
+            color: white;
+
+            padding: 18px 20px 22px;
+
+            border-radius:
+                0 0 25px 25px;
+
+            box-shadow:
+                0 5px 18px
+                rgba(7,26,82,0.18);
+
+        }
+
+
+        .header-row {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+        }
+
+
+        .back {
+
+            width: 40px;
+
+            height: 40px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255,255,255,0.15);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 24px;
+
+            cursor: pointer;
+
+        }
+
+
+        .header h2 {
+
+            margin: 0;
+
+            font-size: 22px;
+
+        }
+
+
+        .header p {
+
+            margin:
+                5px 0 0 55px;
+
+            color: #dbe7ff;
+
+            font-size: 13px;
+
+        }
+
+
+        /* =========================
+           MAIN
+        ========================== */
+
+        .container {
+
+            max-width: 700px;
+
+            margin: auto;
+
+            padding:
+                18px 20px 30px;
+
+        }
+
+
+        /* =========================
+           WELCOME CARD
+        ========================== */
+
+        .welcome-card {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #e3f0ff,
+                    #f1f7ff
+                );
+
+            border-radius: 20px;
+
+            padding: 20px;
+
+            margin-bottom: 18px;
+
+            box-shadow:
+                0 4px 14px
+                rgba(0,0,0,0.06);
+
+        }
+
+
+        .welcome-title {
+
+            color: #071a52;
+
+            font-size: 20px;
+
+            font-weight: bold;
+
+            margin-bottom: 6px;
+
+        }
+
+
+        .welcome-text {
+
+            color: #53647c;
+
+            font-size: 13px;
+
+            line-height: 1.5;
+
+        }
+
+
+        /* =========================
+           PROGRESS
+        ========================== */
+
+        .progress-card {
+
+            background: white;
+
+            padding: 18px;
+
+            border-radius: 18px;
+
+            margin-bottom: 25px;
+
+            box-shadow:
+                0 4px 14px
+                rgba(0,0,0,0.07);
+
+        }
+
+
+        .progress-top {
+
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            align-items: center;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .progress-title {
+
+            color: #071a52;
+
+            font-weight: bold;
+
+            font-size: 15px;
+
+        }
+
+
+        .progress-percent {
+
+            color: #1677ff;
+
+            font-weight: bold;
+
+            font-size: 14px;
+
+        }
+
+
+        .progress-bar-bg {
+
+            width: 100%;
+
+            height: 9px;
+
+            background: #e4e8ef;
+
+            border-radius: 10px;
+
+            overflow: hidden;
+
+        }
+
+
+        .progress-bar {
+
+            height: 100%;
+
+            width: 0%;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #1677ff,
+                    #55a0ff
+                );
+
+            border-radius: 10px;
+
+            transition:
+                width 0.4s ease;
+
+        }
+
+
+        .progress-info {
+
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            margin-top: 8px;
+
+            font-size: 11px;
+
+            color: #6c788b;
+
+        }
+
+
+        .progress-button {
+
+            margin-top: 13px;
+
+            padding:
+                10px 15px;
+
+            border: none;
+
+            background: #071a52;
+
+            color: white;
+
+            border-radius: 9px;
+
+            cursor: pointer;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+        }
+
+
+        /* =========================
+           SECTION
+        ========================== */
+
+        .section {
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .section-heading {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .section-icon {
+
+            width: 38px;
+
+            height: 38px;
+
+            border-radius: 12px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 20px;
+
+        }
+
+
+        .aptitude-icon {
+
+            background: #ddf7e9;
+
+        }
+
+
+        .technical-icon {
+
+            background: #e4efff;
+
+        }
+
+
+        .interview-icon {
+
+            background: #ffe5ed;
+
+        }
+
+
+        .section-title {
+
+            margin: 0;
+
+            color: #071a52;
+
+            font-size: 19px;
+
+        }
+
+
+        .section-subtitle {
+
+            font-size: 11px;
+
+            color: #7a8596;
+
+            margin-top: 3px;
+
+        }
+
+
+        /* =========================
+           TOPIC CARDS
+        ========================== */
+
+        .topic {
+
+            background: white;
+
+            padding: 15px;
+
+            margin-top: 10px;
+
+            border-radius: 15px;
+
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            align-items: center;
+
+            box-shadow:
+                0 3px 10px
+                rgba(0,0,0,0.06);
+
+            transition:
+                transform 0.2s;
+
+        }
+
+
+        .topic:hover {
+
+            transform:
+                translateY(-2px);
+
+        }
+
+
+        .topic-left {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+        }
+
+
+        .topic-number {
+
+            width: 34px;
+
+            height: 34px;
+
+            border-radius: 10px;
+
+            background: #edf3ff;
+
+            color: #1677ff;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-weight: bold;
+
+            font-size: 13px;
+
+        }
+
+
+        .topic-name {
+
+            font-weight: bold;
+
+            font-size: 14px;
+
+            color: #172033;
+
+        }
+
+
+        .topic-small {
+
+            font-size: 10px;
+
+            color: #7a8596;
+
+            margin-top: 3px;
+
+        }
+
+
+        .practice {
+
+            background: #1677ff;
+
+            color: white;
+
+            border: none;
+
+            padding:
+                9px 13px;
+
+            border-radius: 9px;
+
+            cursor: pointer;
+
+            font-size: 11px;
+
+            font-weight: bold;
+
+        }
+
+
+        .practice:hover {
+
+            opacity: 0.9;
+
+        }
+
+
+        /* =========================
+           BOTTOM
+        ========================== */
+
+        .bottom {
+
+            position: fixed;
+
+            bottom: 0;
+
+            left: 0;
+
+            right: 0;
+
+            height: 68px;
+
+            background:
+                rgba(255,255,255,0.97);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            box-shadow:
+                0 -3px 15px
+                rgba(0,0,0,0.08);
+
+            color: #071a52;
+
+            font-size: 12px;
+
+            font-weight: bold;
+
+            z-index: 100;
+
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 450px) {
+
+            .container {
+
+                padding:
+                    15px 15px 25px;
+
+            }
+
+
+            .topic {
+
+                padding: 13px;
+
+            }
+
+
+            .topic-name {
+
+                font-size: 13px;
+
+            }
+
+
+            .practice {
+
+                padding:
+                    8px 10px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <div class="header">
+
+
+        <div class="header-row">
+
+
+            <div
+                class="back"
+                onclick="goBack()">
+
+                ←
+
+            </div>
+
+
+            <div>
+
+                <h2>
+                    TCS Preparation
+                </h2>
+
+            </div>
+
+
+        </div>
+
+
+        <p>
+            Complete placement preparation
+        </p>
+
+
+    </div>
+
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <div class="container">
+
+
+        <!-- WELCOME -->
+
+        <div class="welcome-card">
+
+            <div class="welcome-title">
+
+                🎯 Prepare for TCS with confidence!
+
+            </div>
+
+
+            <div class="welcome-text">
+
+                Practice aptitude, technical skills
+                and interview questions step by step.
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PROGRESS -->
+
+        <div class="progress-card">
+
+
+            <div class="progress-top">
+
+
+                <div class="progress-title">
+
+                    📈 Your Preparation Progress
+
+                </div>
+
+
+                <div
+                    class="progress-percent"
+                    id="progressPercent">
+
+                    0%
+
+                </div>
+
+
+            </div>
+
+
+            <div class="progress-bar-bg">
+
+
+                <div
+                    class="progress-bar"
+                    id="progressBar">
+
+                </div>
+
+
+            </div>
+
+
+            <div class="progress-info">
+
+
+                <span id="progressText">
+
+                    0 questions attempted
+
+                </span>
+
+
+                <span>
+
+                    Keep practicing 🚀
+
+                </span>
+
+
+            </div>
+
+
+            <button
+                class="progress-button"
+                onclick="openProgress()">
+
+                📊 My Progress
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- =========================
+             APTITUDE
+        ========================== -->
+
+        <div class="section">
+
+
+            <div class="section-heading">
+
+
+                <div
+                    class="section-icon
+                           aptitude-icon">
+
+                    🧮
+
+                </div>
+
+
+                <div>
+
+                    <h3 class="section-title">
+
+                        Aptitude
+
+                    </h3>
+
+
+                    <div class="section-subtitle">
+
+                        Quantitative aptitude practice
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- Percentages -->
+
+            <div class="topic">
+
+
+                <div class="topic-left">
+
+
+                    <div class="topic-number">
+                        01
+                    </div>
+
+
+                    <div>
+
+                        <div class="topic-name">
+
+                            Percentages
+
+                        </div>
+
+                        <div class="topic-small">
+
+                            Practice percentage problems
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <button
+                    class="practice"
+                    onclick="openPercentages()">
+
+                    Practice
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- Number System -->
+
+            <div class="topic">
+
+
+                <div class="topic-left">
+
+
+                    <div class="topic-number">
+                        02
+                    </div>
+
+
+                    <div>
+
+                        <div class="topic-name">
+
+                            Number System
+
+                        </div>
+
+                        <div class="topic-small">
+
+                            Practice number problems
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <button
+                    class="practice"
+                    onclick="openNumberSystem()">
+
+                    Practice
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- Profit Loss -->
+
+            <div class="topic">
+
+
+                <div class="topic-left">
+
+
+                    <div class="topic-number">
+                        03
+                    </div>
+
+
+                    <div>
+
+                        <div class="topic-name">
+
+                            Profit & Loss
+
+                        </div>
+
+                        <div class="topic-small">
+
+                            Practice profit and loss
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <button
+                    class="practice"
+                    onclick="openProfitLoss()">
+
+                    Practice
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- Time Work -->
+
+            <div class="topic">
+
+
+                <div class="topic-left">
+
+
+                    <div class="topic-number">
+                        04
+                    </div>
+
+
+                    <div>
+
+                        <div class="topic-name">
+
+                            Time & Work
+
+                        </div>
+
+                        <div class="topic-small">
+
+                            Practice work problems
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <button
+                    class="practice"
+                    onclick="openTimeWork()">
+
+                    Practice
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- Ratio -->
+
+            <div class="topic">
+
+
+                <div class="topic-left">
+
+
+                    <div class="topic-number">
+                        05
+                    </div>
+
+
+                    <div>
+
+                        <div class="topic-name">
+
+                            Ratio & Proportion
+
+                        </div>
+
+                        <div class="topic-small">
+
+                            Practice ratio problems
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <button
+                    class="practice"
+                    onclick="openRatioProportion()">
+
+                    Practice
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =========================
+             TECHNICAL
+        ========================== -->
+
+        <div class="section">
+
+
+            <div class="section-heading">
+
+
+                <div
+                    class="section-icon
+                           technical-icon">
+
+                    💻
+
+                </div>
+
+
+                <div>
+
+                    <h3 class="section-title">
+
+                        Technical
+
+                    </h3>
+
+
+                    <div class="section-subtitle">
+
+                        Technical skills for placement
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- Coding -->
+
+            <div class="topic">
+
+
+                <div class="topic-left">
+
+
+                    <div class="topic-number">
+                        01
+                    </div>
+
+
+                    <div>
+
+                        <div class="topic-name">
+
+                            Coding
+
+                        </div>
+
+                        <div class="topic-small">
+
+                            C • C++ • Python • Java
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <button
+                    class="practice"
+                    onclick="openCoding()">
+
+                    Practice
+
+                </button>
+
+
+            </div>
+
+
+
+           
+
+        </div>
+
+
+
+        <!-- =========================
+             INTERVIEW
+        ========================== -->
+
+        <div class="section">
+
+
+            <div class="section-heading">
+
+
+                <div
+                    class="section-icon
+                           interview-icon">
+
+                    🎤
+
+                </div>
+
+
+                <div>
+
+                    <h3 class="section-title">
+
+                        Interview
+
+                    </h3>
+
+
+                    <div class="section-subtitle">
+
+                        Prepare for the final rounds
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- Technical Interview -->
+
+            <div class="topic">
+
+
+                <div class="topic-left">
+
+
+                    <div class="topic-number">
+                        01
+                    </div>
+
+
+                    <div>
+
+                        <div class="topic-name">
+
+                            Technical Interview
+
+                        </div>
+
+                        <div class="topic-small">
+
+                            Technical interview questions
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <button
+                    class="practice"
+                    onclick="openTechnicalInterview()">
+
+                    Practice
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- HR Interview -->
+
+            <div class="topic">
+
+
+                <div class="topic-left">
+
+
+                    <div class="topic-number">
+                        02
+                    </div>
+
+
+                    <div>
+
+                        <div class="topic-name">
+
+                            HR Interview
+
+                        </div>
+
+                        <div class="topic-small">
+
+                            HR & behavioral questions
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <button
+                    class="practice"
+                    onclick="openHRInterview()">
+
+                    Practice
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- BOTTOM -->
+
+    <div class="bottom">
+
+        🎯 Prepare Smart • Get Placed
+
+    </div>
+
+
+
+    <script>
+
+
+        /* =========================
+           NAVIGATION
+        ========================== */
+
+        function goBack() {
+
+            window.location.href =
+                "TCS.html";
+
+        }
+
+
+        function openPercentages() {
+
+            window.location.href =
+                "percentages.html";
+
+        }
+
+
+        function openNumberSystem() {
+
+            window.location.href =
+                "number_system.html";
+
+        }
+
+
+        function openProfitLoss() {
+
+            window.location.href =
+                "profit_loss.html";
+
+        }
+
+
+        function openTimeWork() {
+
+            window.location.href =
+                "time_work.html";
+
+        }
+
+
+        function openRatioProportion() {
+
+            window.location.href =
+                "ratio_proportion.html";
+
+        }
+
+
+        function openCoding() {
+
+            window.location.href =
+                "coding.html";
+
+        }
+
+
+        function openTechnicalInterview() {
+
+            window.location.href =
+                "technical_interview.html";
+
+        }
+
+
+        function openHRInterview() {
+
+            window.location.href =
+                "hr_interview.html";
+
+        }
+
+
+        function openProgress() {
+
+            window.location.href =
+                "progress.html";
+
+        }
+
+
+        /* =========================
+           COMMON PROGRESS DATA
+        ========================== */
+
+        function updateProgress() {
+
+
+            const progressData =
+                JSON.parse(
+                    localStorage.getItem(
+                        "progressData"
+                    )
+                ) || {
+
+                    attempted: 0,
+
+                    correct: 0,
+
+                    incorrect: 0
+
+                };
+
+
+            const attempted =
+                progressData.attempted || 0;
+
+
+            /*
+                Currently we have
+                25 aptitude questions.
+
+                Later, when Coding,
+                Core EEE and Interviews
+                are completed, we will
+                update the total.
+            */
+
+            const totalQuestions = 25;
+
+
+            let progress = 0;
+
+
+            if (totalQuestions > 0) {
+
+                progress =
+                    Math.round(
+                        (attempted /
+                            totalQuestions) * 100
+                    );
+
+            }
+
+
+            if (progress > 100) {
+
+                progress = 100;
+
+            }
+
+
+            document.getElementById(
+                "progressPercent"
+            ).textContent =
+                progress + "%";
+
+
+            document.getElementById(
+                "progressBar"
+            ).style.width =
+                progress + "%";
+
+
+            document.getElementById(
+                "progressText"
+            ).textContent =
+                attempted +
+                " questions attempted";
+
+        }
+
+
+        updateProgress();
+
+
+    </script>
+
+
+</body>
+
+</html>

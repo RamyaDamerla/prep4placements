@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Prep4Placements - Home</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fc;
+            color: #172033;
+            padding-bottom: 80px;
+        }
+
+
+        /* HEADER */
+
+        .header {
+            background: linear-gradient(
+                135deg,
+                #071a52,
+                #1554b8
+            );
+
+            color: white;
+            padding: 18px 20px 20px;
+            border-radius: 0 0 28px 28px;
+
+            box-shadow:
+                0 5px 18px rgba(7,26,82,0.20);
+        }
+
+
+        .top-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+
+        .welcome h2 {
+            margin: 0;
+            font-size: 23px;
+        }
+
+
+        .welcome p {
+            margin: 3px 0 0;
+            color: #dce8ff;
+            font-size: 13px;
+        }
+
+
+        .profile-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+
+            background:
+                rgba(255,255,255,0.18);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 20px;
+        }
+
+
+        /* SEARCH */
+
+        .search-box {
+            position: relative;
+            margin-top: 13px;
+        }
+
+
+        .search {
+            width: 100%;
+            padding: 13px 15px 13px 42px;
+
+            border: none;
+            border-radius: 13px;
+
+            font-size: 14px;
+            outline: none;
+            background: white;
+
+            box-shadow:
+                0 3px 10px rgba(0,0,0,0.10);
+        }
+
+
+        .search-icon {
+            position: absolute;
+
+            left: 14px;
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            font-size: 17px;
+            color: #6b7689;
+
+            z-index: 5;
+        }
+
+
+        /* MAIN */
+
+        .container {
+            padding: 12px 20px;
+            max-width: 700px;
+            margin: auto;
+        }
+
+
+        /* HERO */
+
+        .hero {
+            position: relative;
+
+            width: 100%;
+            height: 195px;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            margin-bottom: 12px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #dceeff,
+                    #eef7ff
+                );
+
+            box-shadow:
+                0 4px 14px rgba(0,0,0,0.08);
+        }
+
+
+        /* GIRL IMAGE */
+
+        .hero-image {
+            position: absolute;
+
+            right: -5px;
+            bottom: 0;
+
+            width: 58%;
+            height: 100%;
+
+            object-fit: contain;
+
+            object-position: right bottom;
+
+            z-index: 2;
+        }
+
+
+        /* LIGHT FADE BEHIND TEXT */
+
+        .hero-overlay {
+            position: absolute;
+
+            left: 0;
+            top: 0;
+            bottom: 0;
+
+            width: 63%;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #e7f3ff 0%,
+                    #e7f3ff 55%,
+                    rgba(231,243,255,0) 100%
+                );
+
+            z-index: 3;
+
+            pointer-events: none;
+        }
+
+
+        /* HERO TEXT */
+
+        .hero-content {
+            position: absolute;
+
+            left: 0;
+            top: 0;
+
+            width: 55%;
+            height: 100%;
+
+            padding:
+                22px 8px 15px 18px;
+
+            z-index: 4;
+        }
+
+
+        .hero-content h1 {
+            margin: 0;
+
+            font-size: 27px;
+
+            line-height: 1.02;
+
+            color: #071a52;
+        }
+
+
+        .hero-content h1 span {
+            color: #1261c9;
+        }
+
+
+        .hero-content p {
+            margin: 10px 0 5px;
+
+            font-size: 11px;
+
+            line-height: 1.4;
+
+            color: #243c60;
+        }
+
+
+        .hero-button {
+            border: none;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #1677ff,
+                    #287cff
+                );
+
+            color: white;
+
+            padding: 9px 14px;
+
+            border-radius: 20px;
+
+            font-size: 12px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+
+        /* STATS */
+
+        .stats {
+            background: white;
+
+            border-radius: 17px;
+
+            padding: 13px 7px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            margin-bottom: 15px;
+
+            box-shadow:
+                0 3px 12px rgba(0,0,0,0.06);
+        }
+
+
+        .stat {
+            text-align: center;
+
+            border-right:
+                1px solid #e2e6ee;
+        }
+
+
+        .stat:last-child {
+            border-right: none;
+        }
+
+
+        .stat-icon {
+            width: 34px;
+            height: 34px;
+
+            margin: 0 auto 4px;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-size: 16px;
+        }
+
+
+        .questions-icon {
+            background: #ddf7e9;
+        }
+
+
+        .accuracy-icon {
+            background: #ffe1e8;
+        }
+
+
+        .company-icon {
+            background: #e9e3ff;
+        }
+
+
+        .stat-number {
+            font-size: 17px;
+            font-weight: bold;
+            color: #071a52;
+        }
+
+
+        .stat-label {
+            font-size: 10px;
+            color: #68748a;
+            margin-top: 2px;
+        }
+
+
+        /* PROGRESS */
+
+        .progress-card {
+            background: white;
+
+            border-radius: 17px;
+
+            padding: 15px;
+
+            margin-bottom: 15px;
+
+            box-shadow:
+                0 3px 12px rgba(0,0,0,0.06);
+        }
+
+
+        .progress-top {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 9px;
+        }
+
+
+        .progress-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: #071a52;
+        }
+
+
+        .progress-percent {
+            font-size: 13px;
+            font-weight: bold;
+            color: #1677ff;
+        }
+
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+
+            background: #e5e9f0;
+
+            border-radius: 10px;
+
+            overflow: hidden;
+        }
+
+
+        .progress-fill {
+            height: 100%;
+            width: 0%;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #1677ff,
+                    #55a0ff
+                );
+
+            border-radius: 10px;
+
+            transition: width 0.4s ease;
+        }
+
+
+        /* COMPANY TITLE */
+
+        .section-heading {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin:
+                3px 0 10px;
+        }
+
+
+        .section-title {
+            margin: 0;
+
+            font-size: 19px;
+
+            color: #071a52;
+        }
+
+
+        .see-all {
+            font-size: 12px;
+            color: #1677ff;
+        }
+
+
+        /* COMPANY GRID */
+
+        .companies {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 10px;
+        }
+
+
+        /* COMPANY CARD */
+
+        .company {
+            background: white;
+
+            border-radius: 15px;
+
+            min-height: 116px;
+
+            padding: 15px;
+
+            text-align: center;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            position: relative;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 3px 10px rgba(0,0,0,0.06);
+
+            transition:
+                transform 0.2s;
+        }
+
+
+        .company:hover {
+            transform:
+                translateY(-3px);
+        }
+
+
+        .company-logo {
+            width: 65px;
+            height: 48px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 6px;
+
+            font-weight: bold;
+        }
+
+
+        .tcs-logo {
+            color: #e4002b;
+            font-size: 29px;
+        }
+
+
+        .accenture-logo {
+            color: #111;
+            font-size: 20px;
+        }
+
+
+        .accenture-logo span {
+            color: #a100ff;
+        }
+
+
+        .infosys-logo {
+            color: #087c4a;
+            font-size: 22px;
+        }
+
+
+        .wipro-logo {
+            color: #5b2482;
+            font-size: 24px;
+        }
+
+
+        .cognizant-logo {
+            color: #164caa;
+            font-size: 20px;
+        }
+
+
+        .capgemini-logo {
+            color: #008b7a;
+            font-size: 18px;
+        }
+
+
+        .company-name {
+            font-size: 12px;
+            font-weight: bold;
+            color: #172033;
+        }
+
+
+        /* STATUS */
+
+        .available,
+        .coming {
+            position: absolute;
+
+            top: 8px;
+            right: 8px;
+
+            padding: 3px 6px;
+
+            border-radius: 7px;
+
+            font-size: 7px;
+
+            font-weight: bold;
+        }
+
+
+        .available {
+            background: #dcf7e7;
+            color: #16803c;
+        }
+
+
+        .coming {
+            background: #eef0f4;
+            color: #70798a;
+        }
+
+
+        /* BOTTOM NAV */
+
+        .bottom {
+            position: fixed;
+
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+            height: 70px;
+
+            background:
+                rgba(255,255,255,0.97);
+
+            display: flex;
+
+            justify-content:
+                space-around;
+
+            align-items: center;
+
+            box-shadow:
+                0 -3px 15px
+                rgba(0,0,0,0.08);
+
+            z-index: 100;
+        }
+
+
+        .nav-item {
+            text-align: center;
+
+            font-size: 10px;
+
+            color: #788398;
+
+            cursor: pointer;
+        }
+
+
+        .nav-icon {
+            font-size: 20px;
+            margin-bottom: 2px;
+        }
+
+
+        .nav-item.active {
+            color: #1677ff;
+            font-weight: bold;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 500px) {
+
+            .hero {
+                height: 200px;
+            }
+
+            .hero-image {
+                width: 60%;
+            }
+
+            .hero-content {
+                width: 58%;
+            }
+
+            .hero-content h1 {
+                font-size: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <div class="header">
+
+        <div class="top-row">
+
+            <div class="welcome">
+
+                <h2>
+                    Hi, Student! 👋
+                </h2>
+
+                <p>
+                    Let's get you placed!
+                </p>
+
+            </div>
+
+
+            <div class="profile-circle">
+                👤
+            </div>
+
+        </div>
+
+
+        <div class="search-box">
+
+            <span class="search-icon">
+                🔍
+            </span>
+
+            <input
+                class="search"
+                id="searchInput"
+                type="text"
+                placeholder="Search company..."
+                onkeyup="searchCompanies()"
+            >
+
+        </div>
+
+    </div>
+
+
+
+    <!-- MAIN -->
+
+    <div class="container">
+
+
+        <!-- HERO -->
+
+        <div class="hero">
+
+
+            <img
+                src="placement-hero.png"
+                class="hero-image"
+                alt="Student celebrating placement"
+            >
+
+
+            <div class="hero-overlay"></div>
+
+
+            <div class="hero-content">
+
+                <h1>
+
+                    Your<br>
+
+                    Dream <span>Job</span><br>
+
+                    is <span>Possible!</span>
+
+                </h1>
+
+
+                <p>
+
+                    Practice • Learn • Improve<br>
+
+                    Get Placed Confidently 🚀
+
+                </p>
+
+
+                <button
+                    class="hero-button"
+                    onclick="openLearning()">
+
+                    Start Practicing →
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- STATS -->
+
+        <div class="stats">
+
+
+            <div class="stat">
+
+                <div
+                    class="stat-icon questions-icon">
+
+                    📝
+
+                </div>
+
+                <div
+                    class="stat-number"
+                    id="questionCount">
+
+                    0
+
+                </div>
+
+                <div class="stat-label">
+
+                    Questions
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat">
+
+                <div
+                    class="stat-icon accuracy-icon">
+
+                    🎯
+
+                </div>
+
+                <div
+                    class="stat-number"
+                    id="accuracyCount">
+
+                    0%
+
+                </div>
+
+                <div class="stat-label">
+
+                    Accuracy
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat">
+
+                <div
+                    class="stat-icon company-icon">
+
+                    🏢
+
+                </div>
+
+                <div class="stat-number">
+
+                    6
+
+                </div>
+
+                <div class="stat-label">
+
+                    Companies
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- PROGRESS -->
+
+        <div class="progress-card">
+
+
+            <div class="progress-top">
+
+                <div class="progress-title">
+
+                    🎯 Your Preparation Progress
+
+                </div>
+
+
+                <div
+                    class="progress-percent"
+                    id="progressPercent">
+
+                    0%
+
+                </div>
+
+            </div>
+
+
+            <div class="progress-bar">
+
+                <div
+                    class="progress-fill"
+                    id="progressFill">
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- COMPANIES -->
+
+        <div class="section-heading">
+
+            <h2 class="section-title">
+
+                Popular Companies
+
+            </h2>
+
+
+            <span class="see-all">
+
+                See All →
+
+            </span>
+
+        </div>
+
+
+
+        <div
+            class="companies"
+            id="companyList">
+
+
+            <!-- TCS -->
+
+            <div
+                class="company"
+                data-name="tcs"
+                onclick="openTCS()">
+
+                <span class="available">
+
+                    AVAILABLE
+
+                </span>
+
+
+                <div
+                    class="company-logo tcs-logo">
+
+                    TCS
+
+                </div>
+
+
+                <div class="company-name">
+
+                    TCS
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ACCENTURE -->
+
+            <div
+                class="company"
+                data-name="accenture">
+
+                <span class="coming">
+
+                    SOON
+
+                </span>
+
+
+                <div
+                    class="company-logo accenture-logo">
+
+                    accenture<span>➤</span>
+
+                </div>
+
+
+                <div class="company-name">
+
+                    Accenture
+
+                </div>
+
+            </div>
+
+
+
+            <!-- INFOSYS -->
+
+            <div
+                class="company"
+                data-name="infosys">
+
+                <span class="coming">
+
+                    SOON
+
+                </span>
+
+
+                <div
+                    class="company-logo infosys-logo">
+
+                    Infosys
+
+                </div>
+
+
+                <div class="company-name">
+
+                    Infosys
+
+                </div>
+
+            </div>
+
+
+
+            <!-- WIPRO -->
+
+            <div
+                class="company"
+                data-name="wipro">
+
+                <span class="coming">
+
+                    SOON
+
+                </span>
+
+
+                <div
+                    class="company-logo wipro-logo">
+
+                    wipro
+
+                </div>
+
+
+                <div class="company-name">
+
+                    Wipro
+
+                </div>
+
+            </div>
+
+
+
+            <!-- COGNIZANT -->
+
+            <div
+                class="company"
+                data-name="cognizant">
+
+                <span class="coming">
+
+                    SOON
+
+                </span>
+
+
+                <div
+                    class="company-logo cognizant-logo">
+
+                    Cognizant
+
+                </div>
+
+
+                <div class="company-name">
+
+                    Cognizant
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CAPGEMINI -->
+
+            <div
+                class="company"
+                data-name="capgemini">
+
+                <span class="coming">
+
+                    SOON
+
+                </span>
+
+
+                <div
+                    class="company-logo capgemini-logo">
+
+                    Capgemini
+
+                </div>
+
+
+                <div class="company-name">
+
+                    Capgemini
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- BOTTOM NAVIGATION -->
+
+    <div class="bottom">
+
+
+        <div
+            class="nav-item active">
+
+            <div class="nav-icon">
+                🏠
+            </div>
+
+            Home
+
+        </div>
+
+
+        <div
+            class="nav-item"
+            onclick="openLearning()">
+
+            <div class="nav-icon">
+                📚
+            </div>
+
+            My Learning
+
+        </div>
+
+
+        <div class="nav-item">
+
+            <div class="nav-icon">
+                ⬇️
+            </div>
+
+            Downloads
+
+        </div>
+
+
+        <div class="nav-item">
+
+            <div class="nav-icon">
+                👤
+            </div>
+
+            Profile
+
+        </div>
+
+
+    </div>
+
+
+
+    <script src="question-data.js"></script>
+
+
+    <script>
+
+
+        /* TCS */
+
+        function openTCS() {
+
+            window.location.href =
+                "TCS.html";
+
+        }
+
+
+        /* LEARNING */
+
+        function openLearning() {
+
+            window.location.href =
+                "TCS_contents.html";
+
+        }
+
+
+        /* PROGRESS */
+
+        function updateHomeProgress() {
+
+
+            const progressData =
+                JSON.parse(
+                    localStorage.getItem(
+                        "progressData"
+                    )
+                ) || {
+
+                    attempted: 0,
+
+                    correct: 0,
+
+                    incorrect: 0
+
+                };
+
+
+            const attempted =
+                progressData.attempted || 0;
+
+
+            const correct =
+                progressData.correct || 0;
+
+
+            let accuracy = 0;
+
+
+            if (attempted > 0) {
+
+                accuracy =
+                    Math.round(
+                        (correct / attempted) * 100
+                    );
+
+            }
+
+
+            document.getElementById(
+                "questionCount"
+            ).textContent =
+                attempted;
+
+
+            document.getElementById(
+                "accuracyCount"
+            ).textContent =
+                accuracy + "%";
+
+
+            /* TOTAL QUESTIONS - FROM CENTRAL QUESTION DATA */
+
+            const totalQuestions =
+                getQuestionCounts().total;
+
+
+            let progress = 0;
+
+
+            if (totalQuestions > 0) {
+
+                progress =
+                    Math.round(
+                        (attempted /
+                            totalQuestions) * 100
+                    );
+
+            }
+
+
+            if (progress > 100) {
+
+                progress = 100;
+
+            }
+
+
+            document.getElementById(
+                "progressPercent"
+            ).textContent =
+                progress + "%";
+
+
+            document.getElementById(
+                "progressFill"
+            ).style.width =
+                progress + "%";
+
+        }
+
+
+        /* SEARCH */
+
+        function searchCompanies() {
+
+
+            const input =
+                document
+                    .getElementById(
+                        "searchInput"
+                    )
+                    .value
+                    .toLowerCase();
+
+
+            const companies =
+                document.querySelectorAll(
+                    ".company"
+                );
+
+
+            companies.forEach(
+                function(company) {
+
+
+                    const name =
+                        company
+                            .getAttribute(
+                                "data-name"
+                            )
+                            .toLowerCase();
+
+
+                    if (
+                        name.includes(input)
+                    ) {
+
+                        company.style.display =
+                            "flex";
+
+                    } else {
+
+                        company.style.display =
+                            "none";
+
+                    }
+
+                }
+            );
+
+        }
+
+
+        updateHomeProgress();
+
+    </script>
+
+
+</body>
+
+</html>

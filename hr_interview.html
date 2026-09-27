@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>TCS HR Interview</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #222;
+        }
+
+
+        .header {
+            background: linear-gradient(135deg, #0b1f4d, #1769e0);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+
+        .header h2 {
+            margin: 0;
+            font-size: 22px;
+        }
+
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            padding-bottom: 100px;
+        }
+
+
+        .progress-info {
+            background: white;
+            padding: 14px 16px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+            color: #555;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+
+        .main-heading {
+            background: linear-gradient(135deg, #0b1f4d, #1769e0);
+            color: white;
+            padding: 18px;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+        }
+
+
+        .main-heading h3 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+
+        .main-heading p {
+            margin: 7px 0 0;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+
+        .question-number {
+            color: #666;
+            font-size: 15px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+
+        .question-box {
+            background: white;
+            padding: 22px;
+            border-radius: 16px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+
+        .question-label {
+            color: #1769e0;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+
+        .question {
+            font-size: 19px;
+            font-weight: bold;
+            line-height: 1.5;
+            margin-bottom: 22px;
+        }
+
+
+        .answer-section {
+            background: #f7f9fd;
+            border-left: 4px solid #1769e0;
+            padding: 16px;
+            border-radius: 10px;
+            line-height: 1.7;
+        }
+
+
+        .answer-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #0b1f4d;
+            margin-bottom: 10px;
+        }
+
+
+        .answer-section p {
+            margin: 6px 0;
+        }
+
+
+        .answer-section ul {
+            margin-top: 8px;
+            padding-left: 22px;
+        }
+
+
+        .answer-section li {
+            margin-bottom: 8px;
+        }
+
+
+        .ai-button {
+            width: 100%;
+            margin-top: 18px;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background: #6c3cff;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+
+        .ai-button:hover {
+            opacity: 0.9;
+        }
+
+
+        .navigation {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+
+        .navigation button {
+            flex: 1;
+            padding: 13px;
+            border: none;
+            border-radius: 10px;
+            background: #ddd;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+
+        .navigation button:hover {
+            background: #ccc;
+        }
+
+
+        .back-button {
+            width: 100%;
+            margin-top: 15px;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background: #0b1f4d;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+
+        @media (max-width: 600px) {
+
+            .container {
+                padding: 15px;
+                padding-bottom: 90px;
+            }
+
+
+            .header h2 {
+                font-size: 19px;
+            }
+
+
+            .question {
+                font-size: 17px;
+            }
+
+
+            .question-box {
+                padding: 17px;
+            }
+
+
+            .main-heading h3 {
+                font-size: 18px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="header">
+
+        <h2>🎤 TCS HR Interview</h2>
+
+    </div>
+
+
+    <div class="container">
+
+
+        <div
+            class="progress-info"
+            id="progressInfo">
+        </div>
+
+
+        <div class="main-heading">
+
+            <h3>🎯 TCS HR Interview Questions</h3>
+
+            <p>
+                Prepare your answers confidently with simple guidance and AI support.
+            </p>
+
+        </div>
+
+
+        <div
+            class="question-number"
+            id="questionNumber">
+        </div>
+
+
+        <div class="question-box">
+
+
+            <div class="question-label">
+                HR INTERVIEW QUESTION
+            </div>
+
+
+            <div
+                class="question"
+                id="questionText">
+            </div>
+
+
+            <div class="answer-section">
+
+                <div
+                    class="answer-title"
+                    id="answerTitle">
+                </div>
+
+
+                <div
+                    id="answerText">
+                </div>
+
+            </div>
+
+
+            <button
+                class="ai-button"
+                onclick="openAI()">
+
+                🤖 AI Explanation
+
+            </button>
+
+        </div>
+
+
+        <div class="navigation">
+
+            <button onclick="previousQuestion()">
+                ← Previous
+            </button>
+
+            <button onclick="nextQuestion()">
+                Next →
+            </button>
+
+        </div>
+
+
+        <button
+            class="back-button"
+            onclick="goBack()">
+
+            ← Back to TCS Preparation
+
+        </button>
+
+    </div>
+
+
+    <script src="progress.js"></script>
+
+
+    <script>
+
+        /*
+        ============================================================
+        TCS HR INTERVIEW QUESTIONS
+        ============================================================
+        */
+
+        const questions = [
+
+            {
+                question: "Tell me about yourself.",
+
+                answerTitle: "How to answer effectively",
+
+                answer: `
+                    <p>Keep your introduction short and structured.</p>
+
+                    <ul>
+                        <li>Start with your name and education.</li>
+                        <li>Mention your branch and specialization.</li>
+                        <li>Briefly mention your important technical skills.</li>
+                        <li>Mention relevant projects, internships or achievements.</li>
+                        <li>End with your career interest and what you are looking for.</li>
+                    </ul>
+
+                    <p><b>💡 Tip:</b> Keep the answer around 1–2 minutes and speak confidently.</p>
+                `
+            },
+
+
+            {
+                question: "Tell me about your strengths.",
+
+                answerTitle: "How to answer effectively",
+
+                answer: `
+                    <p>Choose 2 or 3 genuine strengths.</p>
+
+                    <ul>
+                        <li>Choose strengths that are useful in a workplace.</li>
+                        <li>Give a small example to support each strength.</li>
+                        <li>Connect your strengths with your studies, projects or teamwork.</li>
+                    </ul>
+
+                    <p><b>Examples:</b> Quick learner, problem-solving, teamwork, adaptability, consistency.</p>
+                `
+            },
+
+
+            {
+                question: "What is your weakness?",
+
+                answerTitle: "How to answer effectively",
+
+                answer: `
+                    <p>Choose a genuine weakness that you are actively improving.</p>
+
+                    <ul>
+                        <li>Clearly mention the weakness.</li>
+                        <li>Explain how it affected you.</li>
+                        <li>Most importantly, explain what you are doing to improve it.</li>
+                    </ul>
+
+                    <p><b>💡 Tip:</b> Don't say that you have no weaknesses.</p>
+                `
+            },
+
+
+            {
+                question: "Why should we hire you?",
+
+                answerTitle: "How to answer effectively",
+
+                answer: `
+                    <p>Connect your skills with what you can contribute to the company.</p>
+
+                    <ul>
+                        <li>Mention your relevant technical skills.</li>
+                        <li>Mention your project or practical experience.</li>
+                        <li>Talk about your willingness to learn.</li>
+                        <li>Explain how you can contribute as a fresher.</li>
+                    </ul>
+
+                    <p><b>💡 Tip:</b> Be confident but don't compare yourself negatively with other candidates.</p>
+                `
+            },
+
+
+            {
+                question: "Tell me about TCS.",
+
+                answerTitle: "Answer",
+
+                answer: `
+                    <p>
+                        Tata Consultancy Services (TCS) is an Indian multinational
+                        IT services and consulting company and a part of the Tata Group.
+                    </p>
+
+                    <p>
+                        TCS provides services and solutions in areas such as
+                        software development, IT consulting, cloud, cybersecurity,
+                        data and analytics, and digital transformation.
+                    </p>
+                `
+            },
+
+
+            {
+                question: "Why do you want to join TCS?",
+
+                answerTitle: "How to answer effectively",
+
+                answer: `
+                    <p>Build your answer around genuine reasons for choosing TCS.</p>
+
+                    <ul>
+                        <li>What attracts you to TCS?</li>
+                        <li>What learning opportunities interest you?</li>
+                        <li>How does the role relate to your skills?</li>
+                        <li>How do you see yourself growing professionally?</li>
+                    </ul>
+
+                    <p><b>💡 Tip:</b> Avoid saying only "TCS is a big company."</p>
+                `
+            },
+
+
+            {
+                question: "Why TCS and not another company?",
+
+                answerTitle: "How to answer effectively",
+
+                answer: `
+                    <p>Focus on why TCS specifically interests you.</p>
+
+                    <ul>
+                        <li>Mention something about TCS that genuinely interests you.</li>
+                        <li>Connect the company with your career goals.</li>
+                        <li>Explain what you want to learn or contribute.</li>
+                    </ul>
+
+                    <p><b>💡 Tip:</b> Don't criticize other companies while answering this question.</p>
+                `
+            },
+
+
+            {
+                question: "What do you know about TCS?",
+
+                answerTitle: "Answer",
+
+                answer: `
+                    <p>
+                        TCS is a Tata Group company that provides IT services,
+                        consulting and business solutions.
+                    </p>
+
+                    <p>
+                        It works across areas such as technology services,
+                        cloud, data and analytics, cybersecurity and digital solutions.
+                    </p>
+                `
+            },
+
+
+            {
+                question: "Why should TCS hire you?",
+
+                answerTitle: "How to answer effectively",
+
+                answer: `
+                    <p>Explain the value you can bring as a fresher.</p>
+
+                    <ul>
+                        <li>Your technical foundation.</li>
+                        <li>Your project experience.</li>
+                        <li>Your problem-solving ability.</li>
+                        <li>Your willingness to learn.</li>
+                        <li>Your ability to work with a team.</li>
+                    </ul>
+                `
+            },
+
+
+            {
+                question: "What do you expect from TCS?",
+
+                answerTitle: "How to answer effectively",
+
+                answer: `
+                    <p>Focus on professional growth.</p>
+
+                    <ul>
+                        <li>Learning opportunities.</li>
+                        <li>Exposure to real projects.</li>
+                        <li>Opportunities to improve your technical skills.</li>
+                        <li>A professional environment where you can contribute and grow.</li>
+                    </ul>
+                `
+            },
+
+
+            {
+                question: "Are you willing to relocate?",
+
+                answerTitle: "How to answer effectively",
+
+                answer: `
+                    <p>Answer honestly based on your actual situation.</p>
+
+                    <ul>
+                        <li>If you are comfortable relocating, clearly say so.</li>
+                        <li>If you have a genuine limitation, explain it politely.</li>
+                        <li>Show that you understand that project requirements may involve different locations.</li>
+                    </ul>
+                `
+            },
+
+
+            {
+                question: "Are you willing to work in different locations or shifts?",
+
+                answerTitle: "How to answer effectively",
+
+                answer: `
+                    <p>Answer according to your actual availability.</p>
+
+                    <ul>
+                        <li>Show flexibility if you are comfortable with it.</li>
+                        <li>Understand that some IT projects may have different schedules.</li>
+                        <li>If you have a genuine constraint, communicate it professionally.</li>
+                    </ul>
+                `
+            },
+
+
+            {
+                question: "Where do you see yourself in 5 years?",
+
+                answerTitle: "How to answer effectively",
+
+                answer: `
+                    <ul>
+                        <li>Talk about your technical growth.</li>
+                        <li>Mention the kind of responsibilities you want to handle.</li>
+                        <li>Show that you want to keep learning.</li>
+                        <li>Explain how you want to contribute to the organization.</li>
+                    </ul>
+
+                    <p><b>💡 Tip:</b> Focus on realistic professional growth rather than only mentioning a job title.</p>
+                `
+            },
+
+
+            {
+                question: "What are your short-term goals?",
+
+                answerTitle: "How to answer effectively",
+
+                answer: `
+                    <ul>
+                        <li>Improve your technical skills.</li>
+                        <li>Gain practical industry experience.</li>
+                        <li>Learn new technologies.</li>
+                        <li>Become productive in your role.</li>
+                    </ul>
+                `
+            },
+
+
+            {
+                question: "What are your long-term goals?",
+
+                answerTitle: "How to answer effectively",
+
+                answer: `
+                    <ul>
+                        <li>Explain the kind of professional you want to become.</li>
+                        <li>Mention continuous technical growth.</li>
+                        <li>Talk about taking greater responsibilities.</li>
+                        <li>Connect your goals with contributing to the organization.</li>
+                    </ul>
+                `
+            },
+
+
+            {
+                question: "Why did you choose your branch?",
+
+                answerTitle: "How to answer effectively",
+
+                answer: `
+                    <p>Explain your genuine reason for choosing your branch.</p>
+
+                    <ul>
+                        <li>What interested you in the branch?</li>
+                        <li>Which subjects or areas attracted you?</li>
+                        <li>How has the branch helped you develop your skills?</li>
+                        <li>How does your branch connect with your career interests?</li>
+                    </ul>
+                `
+            },
+
+
+            {
+                question: "What are your career interests?",
+
+                answerTitle: "How to answer effectively",
+
+                answer: `
+                    <p>Talk about the technical areas you genuinely want to explore.</p>
+
+                    <ul>
+                        <li>Mention your areas of interest.</li>
+                        <li>Explain why you are interested in them.</li>
+                        <li>Mention the skills you are currently developing.</li>
+                        <li>Show that you are open to learning according to the role.</li>
+                    </ul>
+                `
+            },
+
+
+            {
+                question: "Tell me about a time you worked in a team.",
+
+                answerTitle: "How to answer effectively",
+
+                answer: `
+                    <p>Use a real example from a project, college activity or internship.</p>
+
+                    <ul>
+                        <li>Explain the situation.</li>
+                        <li>Explain your responsibility.</li>
+                        <li>Explain how you communicated with teammates.</li>
+                        <li>Explain the result.</li>
+                        <li>Mention what you learned about teamwork.</li>
+                    </ul>
+                `
+            },
+
+
+            {
+                question: "Tell me about a difficult problem you solved.",
+
+                answerTitle: "How to answer effectively",
+
+                answer: `
+                    <p>Explain your problem-solving process.</p>
+
+                    <ul>
+                        <li>What was the problem?</li>
+                        <li>How did you identify the cause?</li>
+                        <li>What solution did you consider?</li>
+                        <li>What action did you take?</li>
+                        <li>What was the result?</li>
+                    </ul>
+                `
+            },
+
+
+            {
+                question: "How do you handle pressure?",
+
+                answerTitle: "How to answer effectively",
+
+                answer: `
+                    <ul>
+                        <li>Explain how you stay calm.</li>
+                        <li>Explain how you prioritize tasks.</li>
+                        <li>Break large tasks into smaller tasks.</li>
+                        <li>Ask for clarification when necessary.</li>
+                        <li>Give a real example if possible.</li>
+                    </ul>
+                `
+            },
+
+
+            {
+                question: "How do you handle failure?",
+
+                answerTitle: "How to answer effectively",
+
+                answer: `
+                    <ul>
+                        <li>Accept the mistake or failure.</li>
+                        <li>Understand what went wrong.</li>
+                        <li>Learn from it.</li>
+                        <li>Take corrective action.</li>
+                        <li>Explain how you would avoid the same problem in the future.</li>
+                    </ul>
+                `
+            },
+
+
+            {
+                question: "How do you handle disagreements with teammates?",
+
+                answerTitle: "How to answer effectively",
+
+                answer: `
+                    <ul>
+                        <li>Listen to the other person's point of view.</li>
+                        <li>Explain your own view calmly.</li>
+                        <li>Focus on the project goal instead of personal opinions.</li>
+                        <li>Use facts and reasoning to reach a decision.</li>
+                        <li>Accept the final team decision professionally.</li>
+                    </ul>
+                `
+            },
+
+
+            {
+                question: "How do you manage deadlines?",
+
+                answerTitle: "How to answer effectively",
+
+                answer: `
+                    <ul>
+                        <li>Understand the deadline clearly.</li>
+                        <li>Break the work into smaller tasks.</li>
+                        <li>Prioritize important tasks.</li>
+                        <li>Track your progress.</li>
+                        <li>Communicate early if you face a genuine problem.</li>
+                    </ul>
+                `
+            },
+
+
+            {
+                question: "What would you do if you were given a task you didn't know how to do?",
+
+                answerTitle: "How to answer effectively",
+
+                answer: `
+                    <ul>
+                        <li>First understand the task and expected result.</li>
+                        <li>Try to learn the required concept or technology.</li>
+                        <li>Use reliable documentation and learning resources.</li>
+                        <li>Ask an experienced teammate when necessary.</li>
+                        <li>Apply what you learned and test the solution.</li>
+                    </ul>
+
+                    <p><b>💡 Key point:</b> Show that you are willing to learn rather than saying "I don't know."</p>
+                `
+            },
+
+
+            {
+                question: "What motivates you?",
+
+                answerTitle: "How to answer effectively",
+
+                answer: `
+                    <p>Choose something that genuinely motivates you.</p>
+
+                    <ul>
+                        <li>Learning new things.</li>
+                        <li>Solving problems.</li>
+                        <li>Achieving goals.</li>
+                        <li>Improving your skills.</li>
+                        <li>Taking responsibility and seeing results.</li>
+                    </ul>
+                `
+            },
+
+
+            {
+                question: "What are your hobbies?",
+
+                answerTitle: "How to answer effectively",
+
+                answer: `
+                    <p>Mention genuine hobbies that you can comfortably discuss.</p>
+
+                    <ul>
+                        <li>Choose 1–3 real hobbies.</li>
+                        <li>Explain why you enjoy them.</li>
+                        <li>Be prepared for follow-up questions about them.</li>
+                    </ul>
+
+                    <p><b>💡 Tip:</b> Don't mention a hobby just because it sounds impressive.</p>
+                `
+            },
+
+
+            {
+                question: "How do you keep yourself updated?",
+
+                answerTitle: "How to answer effectively",
+
+                answer: `
+                    <ul>
+                        <li>Mention reliable technical websites, courses or learning platforms you actually use.</li>
+                        <li>Talk about following technology-related news.</li>
+                        <li>Mention certifications or courses if relevant.</li>
+                        <li>Explain how you practice what you learn.</li>
+                    </ul>
+                `
+            },
+
+
+            {
+                question: "Are you comfortable learning new technologies?",
+
+                answerTitle: "How to answer effectively",
+
+                answer: `
+                    <p>A good answer should demonstrate adaptability.</p>
+
+                    <ul>
+                        <li>Say whether you are comfortable learning new technologies.</li>
+                        <li>Give an example of something you learned recently.</li>
+                        <li>Explain how you learned it.</li>
+                        <li>Show that you are willing to learn technologies required for your role.</li>
+                    </ul>
+                `
+            },
+
+
+            {
+                question: "You have selected TCS Prime. If we offer you a Ninja role, will you accept it?",
+
+                answerTitle: "How to answer effectively",
+
+                answer: `
+                    <p>This is a role-related question, so answer according to your genuine preference and circumstances.</p>
+
+                    <ul>
+                        <li>Understand the difference between the roles being discussed.</li>
+                        <li>Clearly communicate your preference.</li>
+                        <li>If you are willing to accept the offered role, explain that professionally.</li>
+                        <li>If you have a strong preference, explain it respectfully without speaking negatively about the other role.</li>
+                    </ul>
+
+                    <p><b>💡 Tip:</b> Be honest and professional rather than giving an answer just because you think the interviewer wants to hear it.</p>
+                `
+            },
+
+
+            {
+                question: "You are from a different branch. How will you adapt to this role?",
+
+                answerTitle: "How to answer effectively",
+
+                answer: `
+                    <p>Show the interviewer that you can learn and adapt.</p>
+
+                    <ul>
+                        <li>Explain the transferable skills you already have.</li>
+                        <li>Mention relevant programming or technical knowledge you have learned.</li>
+                        <li>Explain how you learn unfamiliar concepts.</li>
+                        <li>Give an example of learning something outside your branch.</li>
+                        <li>Show that you are willing to learn the technologies required for the role.</li>
+                    </ul>
+
+                    <p><b>💡 Tip:</b> Focus on your ability to learn and adapt rather than saying that your branch is unrelated.</p>
+                `
+            },
+
+
+            {
+                question: "Do you have any questions for us?",
+
+                answerTitle: "How to answer effectively",
+
+                answer: `
+                    <p>Yes. It is usually useful to have one or two genuine questions prepared.</p>
+
+                    <ul>
+                        <li>You can ask about the learning or training process for freshers.</li>
+                        <li>You can ask about the kind of projects freshers may work on.</li>
+                        <li>You can ask about opportunities to learn new technologies.</li>
+                        <li>You can ask what skills are important for succeeding in the role.</li>
+                    </ul>
+
+                    <p><b>💡 Tip:</b> Ask something you genuinely want to know and avoid asking questions whose answers were already clearly explained during the interview.</p>
+                `
+            }
+
+        ];
+
+
+        let currentQuestion = 0;
+
+
+        /*
+        ============================================================
+        DISPLAY QUESTION
+        ============================================================
+        */
+
+        function displayQuestion() {
+
+            const q = questions[currentQuestion];
+
+
+            /*
+            ========================================================
+            SAVE HR INTERVIEW PROGRESS
+            ========================================================
+            Viewing the question and answer counts
+            as completing that question.
+
+            saveProgress() prevents the same question
+            from being counted more than once.
+            ========================================================
+            */
+
+            saveProgress(
+                "hrInterview",
+                "hr_" + String(currentQuestion + 1).padStart(3, "0"),
+                true
+            );
+
+
+            document.getElementById("questionNumber").innerText =
+                "Question " +
+                (currentQuestion + 1) +
+                " of " +
+                questions.length;
+
+
+            document.getElementById("questionText").innerText =
+                q.question;
+
+
+            document.getElementById("answerTitle").innerText =
+                q.answerTitle;
+
+
+            document.getElementById("answerText").innerHTML =
+                q.answer;
+
+
+            document.getElementById("progressInfo").innerText =
+                "TCS HR Interview • Question " +
+                (currentQuestion + 1) +
+                " of " +
+                questions.length;
+
+        }
+
+
+        /*
+        ============================================================
+        AI EXPLANATION
+        ============================================================
+        */
+
+        function openAI() {
+
+            const q = questions[currentQuestion];
+
+
+            const question =
+                encodeURIComponent(q.question);
+
+
+            const answer =
+                encodeURIComponent(
+                    q.answer.replace(/<[^>]*>/g, " ")
+                );
+
+
+            const explanation =
+                encodeURIComponent(
+                    q.answer.replace(/<[^>]*>/g, " ")
+                );
+
+
+            window.location.href =
+                "ai-explanation.html" +
+
+                "?question=" +
+                question +
+
+                "&answer=" +
+                answer +
+
+                "&explanation=" +
+                explanation;
+
+        }
+
+
+        /*
+        ============================================================
+        NEXT QUESTION
+        ============================================================
+        */
+
+        function nextQuestion() {
+
+            if (
+                currentQuestion <
+                questions.length - 1
+            ) {
+
+                currentQuestion++;
+
+                displayQuestion();
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+
+            } else {
+
+                alert(
+                    "🎉 You have completed all TCS HR interview questions!"
+                );
+
+            }
+
+        }
+
+
+        /*
+        ============================================================
+        PREVIOUS QUESTION
+        ============================================================
+        */
+
+        function previousQuestion() {
+
+            if (currentQuestion > 0) {
+
+                currentQuestion--;
+
+                displayQuestion();
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+
+            }
+
+        }
+
+
+        /*
+        ============================================================
+        BACK
+        ============================================================
+        */
+
+        function goBack() {
+
+            window.location.href =
+                "TCS_contents.html";
+
+        }
+
+
+        /*
+        ============================================================
+        START
+        ============================================================
+        */
+
+        displayQuestion();
+
+    </script>
+
+
+</body>
+</html>

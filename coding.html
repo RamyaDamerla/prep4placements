@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Coding Practice - Prep4Placements</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #172033;
+        }
+
+        /* HEADER */
+
+        .header {
+            background: linear-gradient(135deg, #071a52, #1677ff);
+            color: white;
+            padding: 18px 22px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .back {
+            font-size: 27px;
+            cursor: pointer;
+        }
+
+        .header h2 {
+            margin: 0;
+            font-size: 21px;
+        }
+
+        /* PAGE */
+
+        .container {
+            max-width: 1400px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .question-number {
+            color: #667085;
+            font-size: 15px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        /* MAIN GRID */
+
+        .coding-layout {
+            display: grid;
+            grid-template-columns: 45% 55%;
+            gap: 20px;
+            align-items: start;
+        }
+
+        /* QUESTION */
+
+        .question-panel {
+            background: white;
+            border-radius: 18px;
+            padding: 24px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+        }
+
+        .question-title {
+            color: #1677ff;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .question {
+            font-size: 22px;
+            font-weight: bold;
+            line-height: 1.5;
+            margin-bottom: 22px;
+            color: #071a52;
+        }
+
+        .section-title {
+            font-size: 17px;
+            font-weight: bold;
+            margin-top: 22px;
+            margin-bottom: 10px;
+            color: #071a52;
+        }
+
+        .description {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #475467;
+        }
+
+        .code-box {
+            background: #f7f9fc;
+            border: 1px solid #d8deea;
+            border-radius: 11px;
+            padding: 15px;
+            margin-top: 10px;
+            white-space: pre-wrap;
+            font-family: Consolas, monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            overflow-x: auto;
+        }
+
+        /* EXAMPLES */
+
+        .examples-container {
+            margin-top: 12px;
+        }
+
+        .example-card {
+            background: #f7f9fc;
+            border: 1px solid #d8deea;
+            border-radius: 12px;
+            padding: 15px;
+            margin-top: 12px;
+        }
+
+        .example-title {
+            font-weight: bold;
+            color: #1677ff;
+            margin-bottom: 10px;
+        }
+
+        .label {
+            font-weight: bold;
+            font-size: 14px;
+            margin-top: 8px;
+            margin-bottom: 5px;
+        }
+
+        .note {
+            background: #eef4ff;
+            border-left: 4px solid #1677ff;
+            padding: 13px;
+            border-radius: 8px;
+            margin-top: 18px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* EDITOR */
+
+        .editor-panel {
+            background: white;
+            border-radius: 18px;
+            padding: 24px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+            position: sticky;
+            top: 15px;
+        }
+
+        .language-title {
+            font-size: 17px;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #071a52;
+        }
+
+        .language-buttons {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .language-button {
+            padding: 10px 17px;
+            border: 1px solid #1677ff;
+            background: white;
+            color: #071a52;
+            border-radius: 9px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .language-button:hover {
+            background: #eef4ff;
+        }
+
+        .language-button.active {
+            background: #071a52;
+            color: white;
+            border-color: #071a52;
+        }
+
+        .selected-language {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #667085;
+        }
+
+        .selected-language b {
+            color: #1677ff;
+        }
+
+        /* ONECOMPILER */
+
+        .compiler-wrapper {
+            margin-top: 15px;
+            border: 1px solid #d8deea;
+            border-radius: 12px;
+            overflow: hidden;
+            background: white;
+        }
+
+        #oc-editor {
+            width: 100%;
+            height: 520px;
+            border: 0;
+            display: block;
+        }
+
+        /* AI */
+
+        .ai-button {
+            width: 100%;
+            margin-top: 15px;
+            padding: 14px;
+            border: none;
+            border-radius: 11px;
+            background: #4b3ca7;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .ai-button:hover {
+            opacity: 0.92;
+        }
+
+        .result {
+            margin-top: 15px;
+            padding: 14px;
+            border-radius: 10px;
+            background: #eef3ff;
+            color: #344054;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION */
+
+        .navigation {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .navigation button {
+            flex: 1;
+            padding: 13px;
+            border: none;
+            border-radius: 11px;
+            background: #e8eef8;
+            color: #172033;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .navigation button:hover {
+            background: #dce6f5;
+        }
+
+        .back-button {
+            width: 100%;
+            margin-top: 18px;
+            padding: 13px;
+            border: none;
+            border-radius: 11px;
+            background: #071a52;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 900px) {
+
+            .coding-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .editor-panel {
+                position: static;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .container {
+                padding: 14px;
+            }
+
+            .question-panel,
+            .editor-panel {
+                padding: 18px;
+            }
+
+            .question {
+                font-size: 19px;
+            }
+
+            #oc-editor {
+                height: 450px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <div class="header">
+
+        <div class="back" onclick="goBack()">
+            ←
+        </div>
+
+        <h2>
+            💻 Coding Practice
+        </h2>
+
+    </div>
+
+
+    <div class="container">
+
+
+        <!-- QUESTION NUMBER -->
+
+        <div
+            class="question-number"
+            id="questionNumber">
+
+            Loading...
+
+        </div>
+
+
+        <div class="coding-layout">
+
+
+            <!-- =========================
+                 LEFT SIDE
+            ========================= -->
+
+            <div class="question-panel">
+
+                <div class="question-title">
+                    💻 CODING QUESTION
+                </div>
+
+
+                <div
+                    class="question"
+                    id="questionText">
+
+                    Loading...
+
+                </div>
+
+
+                <!-- PROBLEM -->
+
+                <div class="section-title">
+                    📝 Problem
+                </div>
+
+                <div
+                    class="description"
+                    id="description">
+
+                    Loading...
+
+                </div>
+
+
+                <!-- SAMPLE INPUT -->
+
+                <div class="section-title">
+                    📥 Sample Input
+                </div>
+
+                <div
+                    class="code-box"
+                    id="sampleInput">
+
+                    Loading...
+
+                </div>
+
+
+                <!-- SAMPLE OUTPUT -->
+
+                <div class="section-title">
+                    📤 Sample Output
+                </div>
+
+                <div
+                    class="code-box"
+                    id="sampleOutput">
+
+                    Loading...
+
+                </div>
+
+
+                <!-- EXPLANATION -->
+
+                <div class="section-title">
+                    💡 Explanation
+                </div>
+
+                <div
+                    class="description"
+                    id="explanation">
+
+                    Loading...
+
+                </div>
+
+
+                <!-- MORE EXAMPLES -->
+
+                <div class="section-title">
+                    🧪 More Examples
+                </div>
+
+                <div
+                    class="examples-container"
+                    id="examplesContainer">
+
+                </div>
+
+
+                <div class="note">
+
+                    💡 <b>Tip:</b>
+                    Understand the examples before writing
+                    your solution.
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 RIGHT SIDE
+            ========================= -->
+
+            <div class="editor-panel">
+
+                <div class="language-title">
+                    Select Programming Language
+                </div>
+
+
+                <div class="language-buttons">
+
+                    <button
+                        class="language-button"
+                        onclick="selectLanguage('c', this)">
+
+                        C
+
+                    </button>
+
+
+                    <button
+                        class="language-button"
+                        onclick="selectLanguage('cpp', this)">
+
+                        C++
+
+                    </button>
+
+
+                    <button
+                        class="language-button active"
+                        onclick="selectLanguage('python', this)">
+
+                        Python
+
+                    </button>
+
+
+                    <button
+                        class="language-button"
+                        onclick="selectLanguage('java', this)">
+
+                        Java
+
+                    </button>
+
+                </div>
+
+
+                <div class="selected-language">
+
+                    Selected Language:
+                    <b id="selectedLanguage">Python</b>
+
+                </div>
+
+
+                <!-- ONLINE COMPILER -->
+
+                <div class="compiler-wrapper">
+
+                    <iframe
+                        id="oc-editor"
+                        frameBorder="0"
+                        src="https://onecompiler.com/embed/python?listenToEvents=true&hideNew=true&hideTitle=true"
+                        width="100%"
+                        height="520px">
+                    </iframe>
+
+                </div>
+
+
+                <!-- AI -->
+
+                <button
+                    class="ai-button"
+                    onclick="openAI()">
+
+                    🤖 AI Explanation
+
+                </button>
+
+
+                <div
+                    class="result"
+                    id="result">
+
+                    Write your solution in the online editor
+                    and use OneCompiler's Run button.
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <div class="navigation">
+
+            <button onclick="previousQuestion()">
+
+                ← Previous
+
+            </button>
+
+
+            <button onclick="nextQuestion()">
+
+                Next →
+
+            </button>
+
+        </div>
+
+
+        <!-- BACK -->
+
+        <button
+            class="back-button"
+            onclick="goBack()">
+
+            ← Back to TCS Preparation
+
+        </button>
+
+    </div>
+
+
+    <!-- DATA -->
+
+    <script src="question-data.js"></script>
+
+    <script src="progress.js"></script>
+
+
+    <script>
+
+
+        const questions =
+            questionData.coding;
+
+
+        let currentQuestion = 0;
+
+        let selectedLanguage = "python";
+
+
+        const languageNames = {
+
+            c: "C",
+
+            cpp: "C++",
+
+            python: "Python",
+
+            java: "Java"
+
+        };
+
+
+        /* =========================
+           DISPLAY QUESTION
+        ========================= */
+
+        function displayQuestion() {
+
+            const q =
+                questions[currentQuestion];
+
+
+            document.getElementById(
+                "questionNumber"
+            ).innerText =
+                "Question " +
+                (currentQuestion + 1) +
+                " of " +
+                questions.length;
+
+
+            /* TITLE */
+
+            document.getElementById(
+                "questionText"
+            ).innerText =
+                q.title;
+
+
+            /* PROBLEM */
+
+            document.getElementById(
+                "description"
+            ).innerText =
+                q.question;
+
+
+            /* SAMPLE INPUT */
+
+            document.getElementById(
+                "sampleInput"
+            ).innerText =
+                q.sampleInput ||
+                q.input ||
+                "Not provided";
+
+
+            /* SAMPLE OUTPUT */
+
+            document.getElementById(
+                "sampleOutput"
+            ).innerText =
+                q.sampleOutput ||
+                q.output ||
+                "Not provided";
+
+
+            /* EXPLANATION */
+
+            document.getElementById(
+                "explanation"
+            ).innerText =
+                q.explanation ||
+                "Explanation not provided.";
+
+
+            /* MORE EXAMPLES */
+
+            const examplesContainer =
+                document.getElementById(
+                    "examplesContainer"
+                );
+
+
+            examplesContainer.innerHTML = "";
+
+
+            if (
+                q.examples &&
+                q.examples.length > 0
+            ) {
+
+                q.examples.forEach(
+                    function(example, index) {
+
+                        const card =
+                            document.createElement(
+                                "div"
+                            );
+
+
+                        card.className =
+                            "example-card";
+
+
+                        card.innerHTML =
+
+                            "<div class='example-title'>" +
+                            "Example " +
+                            (index + 1) +
+                            "</div>" +
+
+                            "<div class='label'>" +
+                            "Input:" +
+                            "</div>" +
+
+                            "<div class='code-box'>" +
+                            escapeHtml(
+                                example.input
+                            ) +
+                            "</div>" +
+
+                            "<div class='label'>" +
+                            "Output:" +
+                            "</div>" +
+
+                            "<div class='code-box'>" +
+                            escapeHtml(
+                                example.output
+                            ) +
+                            "</div>";
+
+
+                        examplesContainer.appendChild(
+                            card
+                        );
+
+                    }
+                );
+
+            }
+
+            else {
+
+                examplesContainer.innerHTML =
+
+                    "<div class='description'>" +
+                    "No additional examples available." +
+                    "</div>";
+
+            }
+
+
+            document.getElementById(
+                "result"
+            ).innerText =
+                "Write your " +
+                languageNames[selectedLanguage] +
+                " solution in the online editor and use OneCompiler's Run button.";
+
+
+            loadBlankEditor();
+
+        }
+
+
+        /* =========================
+           ESCAPE HTML
+        ========================= */
+
+        function escapeHtml(value) {
+
+            return String(value)
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+
+        }
+
+
+        /* =========================
+           BLANK EDITOR
+        ========================= */
+
+        function loadBlankEditor() {
+
+            const iframe =
+                document.getElementById(
+                    "oc-editor"
+                );
+
+
+            iframe.src =
+                "https://onecompiler.com/embed/" +
+                selectedLanguage +
+                "?listenToEvents=true&hideNew=true&hideTitle=true";
+
+
+            iframe.onload = function() {
+
+                setTimeout(function() {
+
+                    iframe.contentWindow.postMessage(
+
+                        {
+                            eventType:
+                                "populateCode",
+
+                            language:
+                                selectedLanguage,
+
+                            files: [
+
+                                {
+                                    name:
+                                        getFileName(),
+
+                                    content: ""
+                                }
+
+                            ]
+                        },
+
+                        "*"
+
+                    );
+
+                }, 700);
+
+            };
+
+        }
+
+
+        /* =========================
+           FILE NAME
+        ========================= */
+
+        function getFileName() {
+
+            if (
+                selectedLanguage === "c"
+            ) {
+
+                return "main.c";
+
+            }
+
+
+            if (
+                selectedLanguage === "cpp"
+            ) {
+
+                return "main.cpp";
+
+            }
+
+
+            if (
+                selectedLanguage === "java"
+            ) {
+
+                return "Main.java";
+
+            }
+
+
+            return "Main.py";
+
+        }
+
+
+        /* =========================
+           LANGUAGE
+        ========================= */
+
+        function selectLanguage(
+            language,
+            button
+        ) {
+
+            selectedLanguage =
+                language;
+
+
+            document.getElementById(
+                "selectedLanguage"
+            ).innerText =
+                languageNames[language];
+
+
+            document
+                .querySelectorAll(
+                    ".language-button"
+                )
+                .forEach(
+                    function(btn) {
+
+                        btn.classList.remove(
+                            "active"
+                        );
+
+                    }
+                );
+
+
+            button.classList.add(
+                "active"
+            );
+
+
+            loadBlankEditor();
+
+
+            document.getElementById(
+                "result"
+            ).innerText =
+                "Write your " +
+                languageNames[language] +
+                " solution in the online editor and use OneCompiler's Run button.";
+
+        }
+
+
+        /* =========================
+           AI
+        ========================= */
+
+        function openAI() {
+
+            const q =
+                questions[currentQuestion];
+
+
+            const question =
+                encodeURIComponent(
+                    q.question
+                );
+
+
+            const answer =
+                encodeURIComponent(
+                    q.answer
+                );
+
+
+            const explanation =
+                encodeURIComponent(
+                    q.explanation
+                );
+
+
+            window.location.href =
+                "ai-explanation.html" +
+                "?question=" +
+                question +
+                "&answer=" +
+                answer +
+                "&explanation=" +
+                explanation;
+
+        }
+
+
+        /* =========================
+           NEXT
+        ========================= */
+
+        function nextQuestion() {
+
+            if (
+                currentQuestion <
+                questions.length - 1
+            ) {
+
+                currentQuestion++;
+
+                displayQuestion();
+
+            }
+
+            else {
+
+                alert(
+                    "🎉 You have completed all coding questions!"
+                );
+
+            }
+
+        }
+
+
+        /* =========================
+           PREVIOUS
+        ========================= */
+
+        function previousQuestion() {
+
+            if (
+                currentQuestion > 0
+            ) {
+
+                currentQuestion--;
+
+                displayQuestion();
+
+            }
+
+        }
+
+
+        /* =========================
+           BACK
+        ========================= */
+
+        function goBack() {
+
+            window.location.href =
+                "TCS_contents.html";
+
+        }
+
+
+        /* =========================
+           START
+        ========================= */
+
+        if (
+            questions.length > 0
+        ) {
+
+            displayQuestion();
+
+        }
+
+        else {
+
+            document.getElementById(
+                "questionNumber"
+            ).innerText =
+                "No coding questions available.";
+
+
+            document.getElementById(
+                "questionText"
+            ).innerText =
+                "Please add coding questions to question-data.js.";
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
